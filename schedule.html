@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>当日のスケジュール | ASTRAX無重力飛行サービス（デザイン案）</title>
+<style>:root{--navy:#0b1f4b;--navy2:#13306e;--orange:#e8590c;--ink:#1b2236;--mute:#5b6478;--line:#e3e8f2;--bg:#f5f7fc;--w:980px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;color:var(--ink);background:#fff;line-height:1.85;font-size:16px;-webkit-font-smoothing:antialiased}
+a{color:var(--navy2);text-decoration:none}a:hover{color:var(--orange)}
+.wrap{max-width:var(--w);margin:0 auto;padding:0 20px}
+/* ヘッダー */
+header.top{position:sticky;top:0;z-index:50;background:rgba(11,31,75,.97);backdrop-filter:blur(6px);box-shadow:0 2px 14px rgba(0,0,0,.18)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:10px;padding-bottom:6px}
+.brand{display:flex;flex-direction:column;line-height:1.2;color:#fff}
+.brand .b1{font-size:12px;letter-spacing:.32em;color:#ff8a4c;font-weight:700}
+.brand .b2{font-size:19px;font-weight:800;letter-spacing:.04em}
+.cta a{display:inline-block;background:var(--orange);color:#fff;padding:9px 20px;border-radius:999px;font-weight:700;font-size:14px}
+.cta a:hover{background:#ff7a2f;color:#fff}
+nav.menu{display:flex;gap:2px;overflow-x:auto;padding-bottom:8px;scrollbar-width:none}
+nav.menu a{color:#c9d4ef;padding:7px 12px;font-size:13px;white-space:nowrap;border-radius:6px}
+nav.menu a:hover{color:#fff;background:rgba(255,255,255,.1)}
+nav.menu a.on{color:#fff;background:var(--orange)}
+/* ヒーロー */
+.hero{background:radial-gradient(1200px 400px at 80% -10%,#274a99 0,transparent 60%),linear-gradient(160deg,#0b1f4b 0%,#102a63 60%,#173a82 100%);color:#fff;padding:64px 0 56px;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;inset:auto -10% -60px -10%;height:120px;background:#fff;border-radius:50% 50% 0 0/100% 100% 0 0}
+.hero .eyebrow{margin:0 0 10px;font-size:12px;letter-spacing:.35em;color:#ff9a63;text-transform:uppercase}
+.hero h1{margin:0;font-size:clamp(28px,5vw,46px);line-height:1.25;font-weight:800;letter-spacing:.02em}
+/* 本文 */
+main.wrap{padding-top:24px;padding-bottom:70px}
+.sec{margin:0 0 44px}
+.sec h2{font-size:24px;margin:0 0 18px;padding-left:14px;border-left:6px solid var(--orange);color:var(--navy);line-height:1.35}
+.sec p{margin:0 0 14px}.sec p.small{font-size:13px;color:var(--mute)}
+.sec ul{margin:0 0 14px;padding-left:22px}.sec li{margin:4px 0}
+.sec b{color:var(--navy)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px;margin:12px 0 18px}
+.grid figure{margin:0;border-radius:10px;overflow:hidden;background:var(--bg);aspect-ratio:4/3;cursor:zoom-in;box-shadow:0 1px 4px rgba(11,31,75,.12);transition:transform .2s,box-shadow .2s}
+.grid figure:hover{transform:translateY(-3px);box-shadow:0 8px 18px rgba(11,31,75,.25)}
+.grid img{width:100%;height:100%;object-fit:cover;display:block}
+figure.one{margin:14px 0}figure.one img{max-width:100%;border-radius:12px;box-shadow:0 4px 18px rgba(11,31,75,.18)}
+.videos{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;margin:14px 0}
+.vid{position:relative;padding-top:56.25%;border-radius:12px;overflow:hidden;box-shadow:0 4px 18px rgba(11,31,75,.2);background:#000}
+.vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0}
+.btn{display:inline-block;background:var(--navy);color:#fff;padding:11px 22px;border-radius:8px;font-weight:700;font-size:14px;transition:.2s}
+.btn:hover{background:var(--orange);color:#fff;transform:translateY(-2px)}
+.btn.alt{background:#fff;color:var(--navy);border:2px solid var(--navy)}
+/* ライトボックス */
+#lb{position:fixed;inset:0;background:rgba(5,12,32,.93);display:none;align-items:center;justify-content:center;z-index:100}
+#lb.on{display:flex}#lb img{max-width:92vw;max-height:86vh;border-radius:8px}
+#lb button{position:absolute;background:rgba(255,255,255,.14);color:#fff;border:0;font-size:30px;width:52px;height:52px;border-radius:50%;cursor:pointer}
+#lb .x{top:18px;right:18px}#lb .p{left:18px;top:50%}#lb .n{right:18px;top:50%}
+/* フッター */
+footer{background:var(--navy);color:#c9d4ef;padding:40px 0;text-align:center;font-size:14px}
+footer a{color:#fff}footer .fb{font-size:22px;font-weight:800;letter-spacing:.3em;color:#fff;margin-bottom:10px}footer .cp{font-size:12px;opacity:.7}
+@media(max-width:640px){.brand .b2{font-size:16px}.cta a{padding:7px 14px;font-size:12px}.hero{padding:44px 0 46px}.sec h2{font-size:20px}}
+
+.ss{margin:6px 0 30px}.ss .stage{position:relative;border-radius:16px;overflow:hidden;background:#0b1f4b;aspect-ratio:16/9;box-shadow:0 10px 30px rgba(11,31,75,.3)}
+.ss .stage img{width:100%;height:100%;object-fit:contain;display:block}
+.ss .stage button{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;border:0;background:rgba(255,255,255,.85);color:var(--navy);font-size:28px;cursor:pointer}
+.ss .sp{left:12px}.ss .sn{right:12px}
+.ss .thumbs{display:flex;gap:8px;overflow-x:auto;padding:10px 2px 4px;scrollbar-width:thin}
+.ss .thumbs img{height:64px;width:auto;border-radius:8px;opacity:.55;cursor:pointer;transition:.2s;flex:0 0 auto}
+.ss .thumbs img.on,.ss .thumbs img:hover{opacity:1;outline:3px solid var(--orange)}
+</style></head><body>
+<header class="top"><div class="wrap">
+ <a class="brand" href="/" target="_top"><span class="b1">ASTRAX ZERO GRAVITY</span><span class="b2">ASTRAX無重力飛行サービス</span></a>
+ <div class="cta"><a href="/contact" target="_top">お問合せ</a></div>
+</div>
+<nav class="wrap menu"><a href="/" target="_top">ホーム</a><a href="/about" target="_top">無重力飛行とは</a><a href="/blank-1" target="_top">無重力の使い方</a><a href="/無重力の効果" target="_top">体験の効果</a><a href="/conditions" target="_top">参加条件</a><a href="/flow" target="_top">流れ</a><a href="/schedule" target="_top" class="on">当日</a><a href="/cost" target="_top">料金</a><a href="/voice" target="_top">体験者の声</a><a href="/gallery" target="_top">ギャラリー</a><a href="/contact" target="_top">お問合せ</a></nav></header>
+<div class="hero"><div class="wrap"><p class="eyebrow">Zero Gravity Flight Experience in Japan</p><h1>当日のスケジュール</h1></div></div>
+<main class="wrap">
+<section class="sec"><h2>無重力飛行当日の流れ</h2>
+<p>このスケジュールは、曜日や天候、その他の理由により時間や順番が変更になることがあります。（カッコ）内の時間は日本海側での実施の場合です。</p>
+</section>
+<section class="sec"><h2>07:50　　　　JR名古屋駅新幹線改札口前の「銀の時計台」前に集合・記念写真撮影</h2>
+<ul><li>全員集まったところで記念写真撮影します。</li></ul>
+<div class="grid"><figure><img loading="lazy" src="https://static.wixstatic.com/media/d03fa8_e45cb33f118546b98ffb417ec037711e~mv2.jpg" alt="Untitled_edited.jpg"></figure><figure><img loading="lazy" src="https://static.wixstatic.com/media/d03fa8_96f851ddeb7f43f18b6adcdf416ae1ab~mv2.png" alt="IMG_2715.heic"></figure></div>
+</section>
+<section class="sec"><h2>08:00　　　　専用大型タクシーに乗車し、名古屋空港に向けて出発</h2>
+<ul><li>タクシーの中で、参加者の皆さんの自己紹介、本日の予定、注意事項説明などを行います。</li></ul>
+<div class="grid"><figure><img loading="lazy" src="https://static.wixstatic.com/media/d03fa8_5974e955b31e45908fe0a40ba9578599~mv2.png" alt="IMG_2704.heic"></figure><figure><img loading="lazy" src="https://static.wixstatic.com/media/d03fa8_827eea70f69a46019086b325b3b169d7~mv2.png" alt="IMG_2717.heic"></figure></div>
+</section>
+<section class="sec"><h2>08:30　　　　愛知県営名古屋空港三菱重工業小牧航空宇宙システム製作所到着</h2>
+<ul><li>工場への入構手続きを行い、タクシーに乗ったまま構内へと入っていきます。</li><li>敷地内は軍事施設でもあるため、写真撮影は一切禁止です。</li></ul>
+</section>
+<section class="sec"><h2>08:45-9:30（8:45-9:20）　自己紹介・オリエンテーション</h2>
+<ul><li>もう一度自己紹介を行います（プロモーション映像用の動画の撮影も行っています）</li><li>機長から、無重力飛行機の説明、パラボリックフライトの説明、施設内の注意事項説明などがあります。</li></ul>
+<div class="grid"><figure><img loading="lazy" src="https://static.wixstatic.com/media/d03fa8_3cf44a3fd0a7493fad432c883511fc13~mv2.png" alt="IMG_2760.heic"></figure><figure><img loading="lazy" src="https://static.wixstatic.com/media/d03fa8_09585d35c9aa4f37b16b69a864f35472~mv2.jpg" alt="IMG_2742_edited.jpg"></figure><figure><img loading="lazy" src="https://static.wixstatic.com/media/d03fa8_0835ab66cb444cdcb914d297e9bc4c62~mv2.jpg" alt="IMG_5113.jpg"></figure></div>
+</section>
+<section class="sec"><h2>9:40-10:00（9:30-9:50）　搭乗服への着替え、実験装置・持ち込み品確認</h2>
+<ul><li>更衣室に移動し、各自搭乗服に着替えます。</li><li>カメラや実験で使う道具などの機内に持ち込むものの検査をします。</li></ul>
+<div class="grid"><figure><img loading="lazy" src="https://static.wixstatic.com/media/d03fa8_1467ecf68b0b4303a1a59734a3f66d74~mv2.jpg" alt="IMG_2818.JPG"></figure><figure><img loading="lazy" src="https://static.wixstatic.com/media/d03fa8_527d7d0d7a134d3fb86112b1aa2428ce~mv2.jpg" alt="IMG_2842.JPG"></figure><figure><img loading="lazy" src="https://static.wixstatic.com/media/d03fa8_053ed4aa2c9449bb8d7fe0bd8fa8c8ae~mv2.jpg" alt="IMG_2814.JPG"></figure><figure><img loading="lazy" src="https://static.wixstatic.com/media/d03fa8_ff4a6b0c51d94b4c8ec14c3648a82a7b~mv2.png" alt="IMG_2826.heic"></figure></div>
+</section>
+<section class="sec"><h2>10:00-10:30（9:50-10:10）　無重力飛行機事前見学・実験準備</h2>
+<ul><li>滑走路上に待機している無重力飛行機に乗り、機内を確認します。</li><li>実験の準備、イメージトレーニングを行います。</li></ul>
+</section>
+<section class="sec"><h2>10:30-11:30（10:10-10:30）　体調確認、軽食等</h2>
+<ul><li>搭乗者（お客様）の体調確認</li><li>軽食（サンドイッチなど）を食べます。</li></ul>
+<div class="grid"><figure><img loading="lazy" src="https://static.wixstatic.com/media/d03fa8_eb38834c9471499aad4c7721e8eeace6~mv2.png" alt="IMG_2803.heic"></figure><figure><img loading="lazy" src="https://static.wixstatic.com/media/d03fa8_422fdc405f1a4d5cb30bbc6f3b50cbfa~mv2.png" alt="IMG_2804.heic"></figure></div>
+</section>
+<section class="sec"><h2>11:30-12:00（10:30-10:45）　飛行前ブリーフィング、安全ビデオ</h2>
+<ul><li>機長より、飛行計画の確認、機体の状態の確認。</li><li>担当者より、飛行空域の説明、天候の説明など。</li><li>酔い止め薬支給（必要な人のみ）</li><li>飛行機の設備、非常口について、緊急時の対応の仕方など、安全に関わる説明をビデオで観ます。</li></ul>
+<div class="grid"><figure><img loading="lazy" src="https://static.wixstatic.com/media/d03fa8_b0e9f747483149a7be107db242b21dd1~mv2.png" alt="IMG_2865.heic"></figure><figure><img loading="lazy" src="https://static.wixstatic.com/media/d03fa8_f8d6d2b9e4de472c941ae87c9f8fa413~mv2.png" alt="IMG_2890.heic"></figure></div>
+</section>
+<section class="sec"><h2>12:00-12:20（10:50-11:10）　保安検査・無重力飛行機へ移動</h2>
+<ul><li>ハンディ金属探知機により、一人一人セキュリティ検査があります。</li><li>専用バンで事務所から滑走路に待機中の飛行機の前まで移動します。</li></ul>
+</section>
+<section class="sec"><h2>12:20（11:10）　全員で飛行前記念撮影</h2>
+<ul><li>その後、飛行機の前で搭乗者（お客様）、添乗員とともに全員の記念写真撮影を行います。</li></ul>
+<div class="grid"><figure><img loading="lazy" src="https://static.wixstatic.com/media/d03fa8_0bc2ef67afde4e47b6bad2328f7ea5da~mv2.png" alt="IMG_2911.heic"></figure><figure><img loading="lazy" src="https://static.wixstatic.com/media/d03fa8_e691595aa4544c64b787d0e64dc5f8b9~mv2.png" alt="IMG_2921.heic"></figure><figure><img loading="lazy" src="https://static.wixstatic.com/media/d03fa8_07a4878f4995420a89b25901a3cce3ea~mv2.png" alt="IMG_2961.heic"></figure><figure><img loading="lazy" src="https://static.wixstatic.com/media/d03fa8_c87d03c973ac44028c9729231823dcd4~mv2.png" alt="IMG_2975.heic"></figure></div>
+</section>
+<section class="sec"><h2>12:30（11:30）　 搭乗・離陸</h2>
+<ul><li>無重力飛行機に搭乗し、各自指定された席に着席します。</li><li>離陸の際はカメラの電源などはお切りください。</li></ul>
+<div class="grid"><figure><img loading="lazy" src="https://static.wixstatic.com/media/d03fa8_1075755a7dce47b58ae3b2d5572974ad~mv2.jpg" alt="IMG_4461.jpg"></figure><figure><img loading="lazy" src="https://static.wixstatic.com/media/d03fa8_d3285a2cc1254777a5968910e0cabba0~mv2.jpg" alt="640x640.jpg"></figure></div>
+</section>
+<section class="sec"><h2>12:30-14:20（11:30-13:20）　無重力飛行</h2>
+<ul><li>離陸後、30分くらいかけて自衛隊の訓練空域まで飛行します。<br>
+（太平洋か日本海のどちらか天候の良い方。高度7500メートル付近）</li><li>空域に到着したら、全員で無重力体験に向けた最終準備を行います。</li><li>準備が整ったら、2分前からカウントダウンが始まり、30秒前から2Gくらいの加重がかかり、その後無重力状態が始まります。</li><li>20秒～30秒ほど無重力状態が続いた後、無重力が終了するアラームがなり、再び２Gくらいの加重がかかる状態に戻ります。</li><li>それが約30秒ほど続いた後、通常の飛行状態に戻ります。</li><li>ローテーションし、次の無重力の準備が整ったら再び2分前のカウントダウンが始まります。（以降、それの繰り返し）</li><li>7回から8回の無重力体験をした後、各自元の席に着席し、再び30分ほどかけて名古屋空港まで戻ります。</li></ul>
+<div class="ss" id="ss"><div class="stage"><img id="ssBig" src="https://static.wixstatic.com/media/d03fa8_457bb438ddb74a0a832e18ab45c210cb~mv2.jpg" alt=""><button class="sp">&#8249;</button><button class="sn">&#8250;</button></div><div class="thumbs"><img loading="lazy" src="https://static.wixstatic.com/media/d03fa8_457bb438ddb74a0a832e18ab45c210cb~mv2.jpg" data-k="0" alt=""><img loading="lazy" src="https://static.wixstatic.com/media/d03fa8_17629205c55c41aca5f98a7f32a901a0~mv2.jpg" data-k="1" alt=""><img loading="lazy" src="https://static.wixstatic.com/media/d03fa8_a241692843604b8d861c0e43c43c1925~mv2.jpg" data-k="2" alt=""><img loading="lazy" src="https://static.wixstatic.com/media/d03fa8_91a82924cad946d38ce0a3f0239977b9~mv2.jpg" data-k="3" alt=""><img loading="lazy" src="https://static.wixstatic.com/media/d03fa8_2b630a454ca84e9b8f605efbaa65d852~mv2.jpg" data-k="4" alt=""><img loading="lazy" src="https://static.wixstatic.com/media/d03fa8_39fcc2d996204deab66f732df2cf2167~mv2.jpg" data-k="5" alt=""><img loading="lazy" src="https://static.wixstatic.com/media/d03fa8_08458fdd6c094a9f8276b191be961cc5~mv2.jpg" data-k="6" alt=""><img loading="lazy" src="https://static.wixstatic.com/media/d03fa8_e08a8205c4af4085a9e9da4eebb5522d~mv2.jpg" data-k="7" alt=""></div></div>
+</section>
+<section class="sec"><h2>14:20-15:00（13:20-13:40）　着陸・機内の後片付け・全員で飛行後の記念撮影</h2>
+<ul><li>名古屋空港の滑走路に着陸したら、シートベルトを外し、機内の後片付けをします。</li><li>タラップから降機する際、外からビデオ撮影を行っています。</li><li>飛行機の前で再び全員で記念撮影を行います。</li><li>待機している専用バンに乗って、再び事務所まで戻ります。</li></ul>
+<div class="grid"><figure><img loading="lazy" src="https://static.wixstatic.com/media/d03fa8_f82cc919f7544167af9616024977b76e~mv2.jpg" alt="_ARX0681.JPG"></figure><figure><img loading="lazy" src="https://static.wixstatic.com/media/d03fa8_9225ceaf31ba499faf80f514be3ee912~mv2.jpg" alt="_ARX0670.JPG"></figure><figure><img loading="lazy" src="https://static.wixstatic.com/media/d03fa8_63232f8ce42540ffa9286a67ef19ad41~mv2.jpg" alt="_ARX0687.JPG"></figure></div>
+</section>
+<section class="sec"><h2>15:00-15:30（13:40-14:15）　事務所に移動・デブリーフィング・無重力飛行認定証授与式</h2>
+<ul><li>事務所に戻って、デブリーフィング</li><li>デブリーフィングの途中で、無重力飛行認定証授与式が行われます。</li><li>撮影された写真のコピーなども行われます（32G以上のSDカード各自持参のこと）</li></ul>
+<div class="grid"><figure><img loading="lazy" src="https://static.wixstatic.com/media/d03fa8_a065b3a235424914946df98e6e002dd5~mv2.jpg" alt="_ARX0697.JPG"></figure><figure><img loading="lazy" src="https://static.wixstatic.com/media/d03fa8_9ffae66e2a914f08b9ae30360a52ede0~mv2.jpg" alt="_ARX0728.JPG"></figure><figure><img loading="lazy" src="https://static.wixstatic.com/media/d03fa8_4e0ff5b5b7d74a0681fe89ac8d9b70bc~mv2.jpg" alt="_ARX0719.JPG"></figure><figure><img loading="lazy" src="https://static.wixstatic.com/media/d03fa8_e094f0db6c1b46159ef580f10cf1c1cb~mv2.jpg" alt="_ARX0730.JPG"></figure><figure><img loading="lazy" src="https://static.wixstatic.com/media/d03fa8_ca588d7f733d450b8651bc494569ee07~mv2.jpg" alt="スクリーンショット 2022-11-17 18_edited.jpg"></figure></div>
+</section>
+<section class="sec"><h2>15:30-15:45（14:15-14:30）　着替え・後片付け</h2>
+<ul><li>搭乗服から、元の服装に着替えます。</li><li>片付けが済んだ方から順次専用タクシーに乗車します。</li></ul>
+</section>
+<section class="sec"><h2>15:45-16:20（14:30-15:05）　専用タクシーで名古屋駅に向けて出発</h2>
+<ul><li>専用タクシーにて、再び名古屋駅に向けて出発します。</li><li>工場のゲートにて、入構証を返却します。</li></ul>
+<div class="grid"><figure><img loading="lazy" src="https://static.wixstatic.com/media/d03fa8_301ab88726e540279ae170d80c992bd8~mv2.png" alt="IMG_3295.heic"></figure><figure><img loading="lazy" src="https://static.wixstatic.com/media/d03fa8_086fab4bc71843ce897038c2f9d8261d~mv2.png" alt="IMG_3298.heic"></figure><figure><img loading="lazy" src="https://static.wixstatic.com/media/d03fa8_e9599840b4584881812426fc26f022e8~mv2.png" alt="IMG_3299.heic"></figure></div>
+</section>
+<section class="sec"><h2>16:30（15:15）　JR名古屋駅新幹線改札口前に到着・解散</h2>
+<ul><li>朝、集合した名古屋駅新幹線改札口前 にて解散します。</li></ul>
+<div class="grid"><figure><img loading="lazy" src="https://static.wixstatic.com/media/d03fa8_df20227e8744490680c2bcb13532eca0~mv2.jpg" alt="IMG_3331.JPG"></figure><figure><img loading="lazy" src="https://static.wixstatic.com/media/d03fa8_42723dc2955346d5a6880fab3decf005~mv2.png" alt="IMG_3324.heic"></figure><figure><img loading="lazy" src="https://static.wixstatic.com/media/d03fa8_c7aecf44a55641129f1345c1fc81a892~mv2.png" alt="IMG_3321.heic"></figure></div>
+</section>
+</main>
+<footer><div class="wrap"><div class="fb">ASTRAX</div>
+<p>E-mail: <a href="mailto:astrax_zero.g@iss-japan.com">astrax_zero.g@iss-japan.com</a><br>Web: <a href="https://astrax.space">https://astrax.space</a><br>FB Page: <a href="https://www.facebook.com/ZERO.G.Challenger/">https://www.facebook.com/ZERO.G.Challenger/</a></p>
+<p class="cp">株式会社ASTRAX／有限会社国際宇宙サービス　© 2026 ASTRAX All rights reserved.</p></div></footer>
+<div id="lb"><button class="x">×</button><button class="p">‹</button><img alt=""><button class="n">›</button></div>
+<script>(function(){var im=[].slice.call(document.querySelectorAll('.grid img,figure.one img')),lb=document.getElementById('lb'),v=lb.querySelector('img'),i=0;function s(k){i=(k+im.length)%im.length;v.src=im[i].src;lb.classList.add('on')}im.forEach(function(e,k){e.addEventListener('click',function(){s(k)})});lb.querySelector('.x').onclick=function(){lb.classList.remove('on')};lb.querySelector('.p').onclick=function(){s(i-1)};lb.querySelector('.n').onclick=function(){s(i+1)};document.addEventListener('keydown',function(e){if(!lb.classList.contains('on'))return;if(e.key==='Escape')lb.classList.remove('on');if(e.key==='ArrowLeft')s(i-1);if(e.key==='ArrowRight')s(i+1)})})();</script>
+<script>(function(){var ss=document.getElementById('ss');if(!ss)return;var big=document.getElementById('ssBig'),th=[].slice.call(ss.querySelectorAll('.thumbs img')),i=0,tm;function go(k){i=(k+th.length)%th.length;big.src=th[i].src;th.forEach(function(e,j){e.classList.toggle('on',j===i)});var bx=th[i].parentNode;bx.scrollLeft=th[i].offsetLeft-bx.clientWidth/2+th[i].clientWidth/2}th.forEach(function(e,k){e.addEventListener('click',function(){go(k);rs()})});ss.querySelector('.sp').onclick=function(){go(i-1);rs()};ss.querySelector('.sn').onclick=function(){go(i+1);rs()};function rs(){clearInterval(tm);tm=setInterval(function(){go(i+1)},4500)}go(0);rs()})();</script>
+</body></html>

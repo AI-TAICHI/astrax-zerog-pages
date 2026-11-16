@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>無重力飛行とは | ASTRAX無重力飛行サービス（デザイン案）</title>
+<style>:root{--navy:#0b1f4b;--navy2:#13306e;--orange:#e8590c;--ink:#1b2236;--mute:#5b6478;--line:#e3e8f2;--bg:#f5f7fc;--w:980px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;color:var(--ink);background:#fff;line-height:1.85;font-size:16px;-webkit-font-smoothing:antialiased}
+a{color:var(--navy2);text-decoration:none}a:hover{color:var(--orange)}
+.wrap{max-width:var(--w);margin:0 auto;padding:0 20px}
+/* ヘッダー */
+header.top{position:sticky;top:0;z-index:50;background:rgba(11,31,75,.97);backdrop-filter:blur(6px);box-shadow:0 2px 14px rgba(0,0,0,.18)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:10px;padding-bottom:6px}
+.brand{display:flex;flex-direction:column;line-height:1.2;color:#fff}
+.brand .b1{font-size:12px;letter-spacing:.32em;color:#ff8a4c;font-weight:700}
+.brand .b2{font-size:19px;font-weight:800;letter-spacing:.04em}
+.cta a{display:inline-block;background:var(--orange);color:#fff;padding:9px 20px;border-radius:999px;font-weight:700;font-size:14px}
+.cta a:hover{background:#ff7a2f;color:#fff}
+nav.menu{display:flex;gap:2px;overflow-x:auto;padding-bottom:8px;scrollbar-width:none}
+nav.menu a{color:#c9d4ef;padding:7px 12px;font-size:13px;white-space:nowrap;border-radius:6px}
+nav.menu a:hover{color:#fff;background:rgba(255,255,255,.1)}
+nav.menu a.on{color:#fff;background:var(--orange)}
+/* ヒーロー */
+.hero{background:radial-gradient(1200px 400px at 80% -10%,#274a99 0,transparent 60%),linear-gradient(160deg,#0b1f4b 0%,#102a63 60%,#173a82 100%);color:#fff;padding:64px 0 56px;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;inset:auto -10% -60px -10%;height:120px;background:#fff;border-radius:50% 50% 0 0/100% 100% 0 0}
+.hero .eyebrow{margin:0 0 10px;font-size:12px;letter-spacing:.35em;color:#ff9a63;text-transform:uppercase}
+.hero h1{margin:0;font-size:clamp(28px,5vw,46px);line-height:1.25;font-weight:800;letter-spacing:.02em}
+/* 本文 */
+main.wrap{padding-top:24px;padding-bottom:70px}
+.sec{margin:0 0 44px}
+.sec h2{font-size:24px;margin:0 0 18px;padding-left:14px;border-left:6px solid var(--orange);color:var(--navy);line-height:1.35}
+.sec p{margin:0 0 14px}.sec p.small{font-size:13px;color:var(--mute)}
+.sec ul{margin:0 0 14px;padding-left:22px}.sec li{margin:4px 0}
+.sec b{color:var(--navy)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px;margin:12px 0 18px}
+.grid figure{margin:0;border-radius:10px;overflow:hidden;background:var(--bg);aspect-ratio:4/3;cursor:zoom-in;box-shadow:0 1px 4px rgba(11,31,75,.12);transition:transform .2s,box-shadow .2s}
+.grid figure:hover{transform:translateY(-3px);box-shadow:0 8px 18px rgba(11,31,75,.25)}
+.grid img{width:100%;height:100%;object-fit:cover;display:block}
+figure.one{margin:14px 0}figure.one img{max-width:100%;border-radius:12px;box-shadow:0 4px 18px rgba(11,31,75,.18)}
+.videos{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;margin:14px 0}
+.vid{position:relative;padding-top:56.25%;border-radius:12px;overflow:hidden;box-shadow:0 4px 18px rgba(11,31,75,.2);background:#000}
+.vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0}
+.btn{display:inline-block;background:var(--navy);color:#fff;padding:11px 22px;border-radius:8px;font-weight:700;font-size:14px;transition:.2s}
+.btn:hover{background:var(--orange);color:#fff;transform:translateY(-2px)}
+.btn.alt{background:#fff;color:var(--navy);border:2px solid var(--navy)}
+/* ライトボックス */
+#lb{position:fixed;inset:0;background:rgba(5,12,32,.93);display:none;align-items:center;justify-content:center;z-index:100}
+#lb.on{display:flex}#lb img{max-width:92vw;max-height:86vh;border-radius:8px}
+#lb button{position:absolute;background:rgba(255,255,255,.14);color:#fff;border:0;font-size:30px;width:52px;height:52px;border-radius:50%;cursor:pointer}
+#lb .x{top:18px;right:18px}#lb .p{left:18px;top:50%}#lb .n{right:18px;top:50%}
+/* フッター */
+footer{background:var(--navy);color:#c9d4ef;padding:40px 0;text-align:center;font-size:14px}
+footer a{color:#fff}footer .fb{font-size:22px;font-weight:800;letter-spacing:.3em;color:#fff;margin-bottom:10px}footer .cp{font-size:12px;opacity:.7}
+@media(max-width:640px){.brand .b2{font-size:16px}.cta a{padding:7px 14px;font-size:12px}.hero{padding:44px 0 46px}.sec h2{font-size:20px}}
+
+.ss{margin:6px 0 30px}.ss .stage{position:relative;border-radius:16px;overflow:hidden;background:#0b1f4b;aspect-ratio:16/9;box-shadow:0 10px 30px rgba(11,31,75,.3)}
+.ss .stage img{width:100%;height:100%;object-fit:contain;display:block}
+.ss .stage button{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;border:0;background:rgba(255,255,255,.85);color:var(--navy);font-size:28px;cursor:pointer}
+.ss .sp{left:12px}.ss .sn{right:12px}
+.ss .thumbs{display:flex;gap:8px;overflow-x:auto;padding:10px 2px 4px;scrollbar-width:thin}
+.ss .thumbs img{height:64px;width:auto;border-radius:8px;opacity:.55;cursor:pointer;transition:.2s;flex:0 0 auto}
+.ss .thumbs img.on,.ss .thumbs img:hover{opacity:1;outline:3px solid var(--orange)}
+</style></head><body>
+<header class="top"><div class="wrap">
+ <a class="brand" href="/" target="_top"><span class="b1">ASTRAX ZERO GRAVITY</span><span class="b2">ASTRAX無重力飛行サービス</span></a>
+ <div class="cta"><a href="/contact" target="_top">お問合せ</a></div>
+</div>
+<nav class="wrap menu"><a href="/" target="_top">ホーム</a><a href="/about" target="_top" class="on">無重力飛行とは</a><a href="/blank-1" target="_top">無重力の使い方</a><a href="/無重力の効果" target="_top">体験の効果</a><a href="/conditions" target="_top">参加条件</a><a href="/flow" target="_top">流れ</a><a href="/schedule" target="_top">当日</a><a href="/cost" target="_top">料金</a><a href="/voice" target="_top">体験者の声</a><a href="/gallery" target="_top">ギャラリー</a><a href="/contact" target="_top">お問合せ</a></nav></header>
+<div class="hero"><div class="wrap"><p class="eyebrow">Zero Gravity Flight Experience in Japan</p><h1>無重力飛行とは</h1></div></div>
+<main class="wrap">
+<section class="sec"><h2><b>無重力とは？</b></h2>
+<p>地球の周りを回っている宇宙船の中が無重力になっているのは、宇宙が無重力だからではりません。この宇宙には無数の星たちがあり、それぞれの引力により引き合ってバランスしている状態であり、本当の意味での無重力の空間というのは存在しないのです。</p>
+<p>地球でも、重力と呼ばれる地球が持つ引力の働きにより、人や物体などは地面に引き寄せられていて、常に重量というものを持っています。例えば、体重が○○kgとか、お米○○kgとかですね。</p>
+<p>しかし重力を打ち消した空間では、見かけ上、物質の重量がなくなるので、人も物体もフワフワと浮いてしまいます。簡単に言うと、テレビなどで見かける、宇宙飛行士が宇宙船の中で浮遊しているような状態。</p>
+<p>宇宙船は、地球の周りをものすごいスピードで回転することにより、人工的に遠心力を作り出し、地球の引力と遠心力を釣り合わせて無重力にしています。そのため、どんな宇宙船も止まってしまえば地上に落ちてきてしまいます。</p>
+<p>このように、実際には重力がなくなったわけではないのですが、人工的に重力を打ち消すことで無重力状態を作り出すことができるのです。<a href="http://www.kids.isas.jaxa.jp/faq/develop/de03/000086.html">詳しくはこちら→</a></p>
+<figure class="one"><img loading="lazy" src="https://static.wixstatic.com/media/36dff5_55c7b3327b100f80fc1a33b93f2829b7.jpg" alt=""></figure>
+<div class="btns"><a class="btn" href="http://www.kids.isas.jaxa.jp/faq/develop/de03/000086.html" target="_blank" rel="noopener">リンク</a></div>
+<figure class="one"><img loading="lazy" src="https://static.wixstatic.com/media/36dff5_f81ee9af41544d33b06ee7d3e067b386.png" alt=""></figure>
+</section>
+<section class="sec"><h2><b>無重力飛行とは？</b></h2>
+<p>地球の大気圏内で無重力状態を作り出すには、ものを落下させることにより、重力に逆らわないようにする方法や、遊園地のバイキングのように一瞬体を放り投げるようにすると作り出すことができます。しかし、それらはほんの一瞬しか無重力状態にはなりません。<br>
+　もう少し長時間の無重力状態を作るには、小型ジェット機を用いて、高度7500m〜10000mくらいの高さのところで飛行機を45度の角度で急上昇させて放り投げるような感じで飛行を行うことで、20秒から30秒間くらいの無重力状態を作り出すことができます（このような飛び方をパラボリックフライト（あるいは放物線飛行）と呼んでいます）。<br>
+　1回の飛行は全体で1時間半くらいで、その間に７〜８回程度のパラボリックフライトを行うことで、合計で5分間程度の無重力状態を体験することができます。1回ずつのパラボリックフライトのインターバルはだいたい５分くらいあり、その間に次のパラボリックフライトの準備を行うことができます。<br>
+　空港から離陸し、30分くらいかけて、日本海か太平洋側にある自衛隊の訓練空域（旅客機などが飛ばない特別な空域）に移動し、その中でパラボリックフライトを繰り返し、再び30分くらいかけて空港に戻ってきます。全体の所要時間は１時間半くらいです。</p>
+</section>
+<section class="sec"><h2><b>パラボリックフライトとは？</b></h2>
+<p>パラボリックフライトとは、航空機を放物線状に飛行させる方法を言い、地球の引力の力を打ち消すことで、無重力状態や月の重力（1/6の重力）のような低重力状態を作り出すことができます。</p>
+<p>水平飛行の状態から、加速のために若干下向きに飛行を行った後、エンジンを最大出力にした状態で一気に機首を45度の方向まであげ、さらに加速して上昇している状態で一気にエンジンの出力を落とします。すると、飛行機がそのまま45度の方向に放り上げられて放物線飛行の状態になります。そのまま上昇を続け、頂点まで達したところで今度は下向きに加速を始めます。そして元の高さまで戻ってきたところで機首を水平の状態に戻して減速を行います。そしてまた次のパラボリックフライトが実施できるように安定飛行を行います。</p>
+</section>
+<section class="sec"><h2>なお、放物線飛行中は低重力や無重力状態になりますが、パラボリックフライトの前後の加速と減速の時は最大で2G程度の過重がかかります。</h2>
+<figure class="one"><img loading="lazy" src="https://static.wixstatic.com/media/36dff5_19c8449fc5ac41ac95ee10566831ebe1.png" alt=""></figure>
+</section>
+<section class="sec"><h2>建築家 4</h2>
+<figure class="one"><img loading="lazy" src="https://static.wixstatic.com/media/36dff5_fd34467db45f493cb031afce64708fe9.png" alt=""></figure>
+</section>
+<section class="sec"><h2><b>無重力体験とは？</b></h2>
+<p>この無重力専用の飛行機に乗ってパラボリックフライトを行っている間、まず最初の３０秒間くらいの間、飛行機が加速するために2G（地球の重力の2倍）くらいの力がかかります。次に突然体がフワッと浮き出し、20秒から30秒間ほど宙に浮いた状態になります（実際には飛行機の機体とともに放り投げられています）。その間、自分や飛行機が上向かって飛んでいるのか下に向かって落ちているのかは全く感じません。そして、無重力状態が終了することを知らせるアラームが鳴った後、体がストンと落ちて、飛行機が減速するために再び30秒間くらい2Gくらいの力がかかります。そして、５分ほどのインターバルがあり、また同じことを繰り返していきます（最大8回ほど）。<br>
+ <br>
+　最初の数回は、重力から解放され、体が浮いてしまうという、これまでに体験したことがない状態にびっくりするでしょう。そして誰もが、体が浮いたまま何もできない自分に、思わず笑いってしまうか、はしゃぐか、キャーキャー叫ぶことになります。３回ほど無重力状態を体験するとだんだん慣れてきて、地上では想像ができないような状況が起こっていることを身体で理解することができるでしょう。そして、自然と身体が無重力の状態に合わせて適用していき、周りで起こっている不思議な状態を頭でも理解することができるようになってきます。あらゆるものが宙に浮くだけでなく、床に留まっているものはずっととどまり続け、移動するには反力が働かないと動けないということを自然と感じるようになります。<br>
+<br>
+　そしてどんな方も、自分の無力さを感じ、協力しないと何もできないということも理解するでしょう。また、自分が空中に浮遊していることで、空飛ぶ夢が叶ったと感じる人もいると思います。頭や手足の重さも感じなくなるので、身体中がバラバラになったように感じる人もいますし、幽体離脱のような感覚になる方もいるようです。経験豊富な大人よりも子供の方が、そして方向感覚が鋭い方よりも方向音痴の方の方が無重力には適応しやすいようです。<br>
+ <br>
+　何れにしても、生まれる前（母親のお腹中にいる頃）から常に重力がある環境の中で生活してきた私たちにとって、重力がない世界というのは、常に空気があって当たり前の世界から急に空気がない世界に飛び込んだようなくらい違う世界に来てしまったかのような感覚になると思います。そして、20〜30秒x8回くらいの無重力状態の感覚が身体と脳に記憶として残り、その後の生活や人生に様々な影響を及ぼすことになるでしょう。<br>
+ <br>
+　この不思議な体験を、言葉や写真や映像だけで伝えるのは非常に難しいので、是非一度、実際に体験してみて、ご自身で感じてみてください。</p>
+<div class="grid"><figure><img loading="lazy" src="https://static.wixstatic.com/media/36dff5_b7c000634ca64461ac5bae13c990a560.jpg" alt=""></figure><figure><img loading="lazy" src="https://static.wixstatic.com/media/36dff5_58bb2b24f98c45a8a2c3736e94768330.jpg" alt=""></figure><figure><img loading="lazy" src="https://static.wixstatic.com/media/36dff5_489663fc0d6440b9b6e98c92eb38faa0.jpg" alt=""></figure></div>
+</section>
+<section class="sec"><h2><b>無重力飛行機とは？</b></h2>
+<p>日本で無重力飛行を行う飛行機は、MU-300しかありません。<br>
+　MU-300の機内（客室）には5人搭乗することができ、二人のスタッフと、お客様が最大で3名乗ることができます（他に二人のパイロットが搭乗します）。<br>
+　離陸と着陸時は、お客様は指定された座席に座ります。無重力飛行を行う空域では、自由に席替えができます。<br>
+　無重力の間は、フリーエリアと呼ばれる空間（座席が取り外してある広い空間）で、各自実験や体験をしていただけます。フリーエリアは基本的に二人ずつのローテーションで利用し、それ以外の方々は座席の方で無重力体験を行います。<br>
+　スタッフだけでなくお客様同士も、お互いがどんなことをしたいのかを事前に話し合い、共有しあい、協力しあいながら、それぞれのやりたいことを実現していきます。</p>
+<figure class="one"><img loading="lazy" src="https://static.wixstatic.com/media/36dff5_73ea7ca488784cbdb41979a52864b383~mv2.jpg" alt="photos_b1.jpg"></figure>
+</section>
+<section class="sec"><h2><b>無重力中にできること・できないこと</b></h2>
+<p>決められた制限の中で、お客様には様々な格好をして浮遊体験したり、様々な無重力実験を行っていただくことができます。例えば、</p>
+<p>1 魔法使いの格好をして竹ぼうきに乗って空中を飛んでみたい。</p>
+<p class="small">2 無重力状態で楽器を弾いてみたい。</p>
+<p class="small">3 血圧は上がるの？下がるの？</p>
+<p class="small">4 魔法の絨毯で空を飛んでみたい。</p>
+<p class="small">5 孫悟空の格好をしてきんと雲で飛んでみたい。</p>
+<p class="small">6 天使の格好をして飛んでみたい。</p>
+<p class="small">7 無重力を体験すると意識がどれくらい変わるか確かめてみたい。</p>
+<p class="small">8 宇宙飛行士みたいに空中で水を飲んだり、宇宙食を食べてみたい!</p>
+<p class="small">9 シャボン玉ってうまく作ることが出来るのかな?<br>
+　10 商品開発のための無重力実験をしてみたい。</p>
+<p class="small">11 どうしたら無重力っぽい記念写真がとれるかな？<br>
+　12 ラーメンやカレーはうまく食べられるかな？<br>
+　13 無重力でプロポーズや結婚式をしてみたい。<br>
+　14 無重力のなかで CM やグラビア撮影をしてみたい。<br>
+　15 スマホの重力センサーなどはどう動作する？<br>
+　16 ゲームの開発に無重力の挙動を取り入れたい。<br>
+　17 無重力でマジックをしたらどうなるの？<br>
+　18 世界初の無重力○○になりたい！</p>
+<figure class="one"><img loading="lazy" src="https://static.wixstatic.com/media/56729f_ce3a526b425d4e6ebd8cf48b9d7ad939~mv2.png" alt="スクリーンショット 2020-01-13 15.35.31.png"></figure>
+<p>などなど、これまでも、様々なことに挑戦された方がいらっしゃいます。皆様がそれぞれ独自のアイディアを考え、ご自身で準備され、その夢を実現されています。何より価値があることは、ほとんどのことが世界初！ということ。予想取りに行くこともあれば、全く想像もしていなかったことが起きることもあり、楽しさと驚きいっぱいの時間です。</p>
+<p>せっかく無重力体験をするのなら自分だったらどんなことをしようかと考えている間もとても楽しい時間です。そしてその体験から様々なことを生み出すことができるでしょう。</p>
+<p>そういう意味では、飛行中はもちろん、飛ぶ前から、飛んだ後まで楽しむことができます。</p>
+<p>もしかしたら、あなたは、「無重力で○○した日本初の人」、あるいは「世界初の人」になれるかもしれません！</p>
+<p>◆ 無重力で実施する実験の内容 ：</p>
+<p>・原則、お客様が実験や、無重力でやりたいことをご提案いただきます。</p>
+<p>・内容について、ASTRAXスタッフがメールや電話等でお客様と事前調整します。</p>
+<p>・ASTRAXスタッフは実験アドバイス、実験提案の助言等を行います。</p>
+<p>◆ 実験装置（道具）について ：</p>
+<p>・原則、お客様の方で全てご用意ください。</p>
+<p>・航空会社の方で用意があるものは、貸し出す場合もあります。（ペットボトルや水など）</p>
+<p>◆ 実験内容の制限について ：</p>
+<p>・危険物（航空法で輸送禁止になっている物件）、凶器となり得るものの搭載禁止</p>
+<p>・火気厳禁</p>
+<p>・液体（水のみ）は最大で200ml</p>
+<p>・生物の持込禁止（事前に大学等で倫理審査を受けたものであれば可能）</p>
+<p>・ガラスの持込禁止（アクリルなどに置き換えれば可能）</p>
+<p>・実験道具の大きさは、原則、幅40cm×高さ25cm×奥行き15cm 又は3辺の和が80cm以内</p>
+<p>・実験道具の重量は5kg以下。</p>
+<p>・原則、実験用電源（100VAC）供給なし。</p>
+<p>・電波を発するものは搭載禁止。</p>
+<p>（サイズなどは特例が認められる場合もありますので、念のため事前にASTRAXスタッフにご相談ください）</p>
+</section>
+<section class="sec"><h2><b>無重力飛行機内への持ち込み制限</b></h2>
+<p>航空機への持ち込み制限について</p>
+<p>危険物等の機内持ち込みを制限するために、持ち込み品の検査を搭乗前に行います。 本検査はブリーフィングの前に行います。また準備、見学のために機内に入る直前、及び搭乗のために機内に乗り込む直前に、ハンディ金属探知器を使用して全身検査をさせていただきます。</p>
+<p>機内持ち込み、及び実験内容・装置について</p>
+<p>機内搭載禁止物件</p>
+<p>下記の物件は機内搭載禁止の物件とします。<br>
+　　(1) 凶器となりえる物(ナイフ、はさみ、バット、工具等)<br>
+　　(2) 航空法で輸送禁止となっている物(火薬類、腐食性物質、高圧ガス、</p>
+<p>引火性液体、毒物、放射性物質、可燃性物質、酸化性物質、その他有害物件等)</p>
+<p>機内持ち込みおよび実験内容・装置について</p>
+<p>航空機で実験を実施するにためには、安全上の理由から様々な制限を受けます。本項では実験を実施するにあたり、注意していただく事項を記載します。</p>
+<p>実験内容に関する制限事項</p>
+<ul><li>提案実験内容についてはあらかじめ、ASTRAX担当者と調整・確認してください。</li><li>機内火気厳禁のため、火を使った実験は禁止とします。</li><li>液体を使用した実験は、漏れのないように留意（タオル、吸水シート等を持参）し、液体の量は最大で一人当たり200mlまでとします。</li><li>生物の機内持ち込みは禁止とします。</li><li>機内に浮遊させるものは、5㎝以上のやわらかい物に限定させていただきます。また機内では物を絶対に紛失しないようにしてください。</li></ul>
+<p>機内持ち込み可能な物</p>
+<ul><li>機内へ持ち込むことができる実験装置は収納スペースの関係から、幅40cm×高さ25cm×奥行き15cm、又は3辺の和が80cm以内のものを一人当たり1個とし、重量は５ｋｇ以下とします。</li><li>機内持ち込み品を収納するバックなどはご自身でご準備ください。</li></ul>
+<p>小さい持ち込み品が複数ある場合は一つにまとめられるようにバッグをご持参ください。無重力状態になると飛散の恐れがあります。</p>
+<p>機内持ち込み禁止の物</p>
+<ul><li>凶器となりえる物</li><li>ハサミ、ナイフ、工具（ドライバー、ヤスリ、ハンマーなど）、バット、ゴルフクラブなど凶器となりえる物品すべてが、法律により機内への持ち込み禁止となっております。</li></ul>
+<p>実験装置に関する制限事項<br>
+　(1) ガラス製品もしくはガラスを使用した機器の持ち込みは原則として禁止とします。装置の構成上やむを得ず使用する場合は飛散防止対策を講じていただきます。詳しくはASTRAXにお問い合わせください。</p>
+<p>(2) 実験用電源は航空機から供給しません。乾電池で作動する装置としてください。また、リチウムイオン電池の持ち込みには制限があります。乾電池で作動する装置としてください。詳しくは事前に相談してください。<br>
+　(3) 電波を発するものは搭載禁止させていただきます。</p>
+<figure class="one"><img loading="lazy" src="https://static.wixstatic.com/media/d03fa8_7a3b98688c934ab4a27c9bea9f1e6f3a~mv2.png" alt="持ち込み可能サイズ.png"></figure>
+</section>
+</main>
+<footer><div class="wrap"><div class="fb">ASTRAX</div>
+<p>E-mail: <a href="mailto:astrax_zero.g@iss-japan.com">astrax_zero.g@iss-japan.com</a><br>Web: <a href="https://astrax.space">https://astrax.space</a><br>FB Page: <a href="https://www.facebook.com/ZERO.G.Challenger/">https://www.facebook.com/ZERO.G.Challenger/</a></p>
+<p class="cp">株式会社ASTRAX／有限会社国際宇宙サービス　© 2026 ASTRAX All rights reserved.</p></div></footer>
+<div id="lb"><button class="x">×</button><button class="p">‹</button><img alt=""><button class="n">›</button></div>
+<script>(function(){var im=[].slice.call(document.querySelectorAll('.grid img,figure.one img')),lb=document.getElementById('lb'),v=lb.querySelector('img'),i=0;function s(k){i=(k+im.length)%im.length;v.src=im[i].src;lb.classList.add('on')}im.forEach(function(e,k){e.addEventListener('click',function(){s(k)})});lb.querySelector('.x').onclick=function(){lb.classList.remove('on')};lb.querySelector('.p').onclick=function(){s(i-1)};lb.querySelector('.n').onclick=function(){s(i+1)};document.addEventListener('keydown',function(e){if(!lb.classList.contains('on'))return;if(e.key==='Escape')lb.classList.remove('on');if(e.key==='ArrowLeft')s(i-1);if(e.key==='ArrowRight')s(i+1)})})();</script>
+<script>(function(){var ss=document.getElementById('ss');if(!ss)return;var big=document.getElementById('ssBig'),th=[].slice.call(ss.querySelectorAll('.thumbs img')),i=0,tm;function go(k){i=(k+th.length)%th.length;big.src=th[i].src;th.forEach(function(e,j){e.classList.toggle('on',j===i)});var bx=th[i].parentNode;bx.scrollLeft=th[i].offsetLeft-bx.clientWidth/2+th[i].clientWidth/2}th.forEach(function(e,k){e.addEventListener('click',function(){go(k);rs()})});ss.querySelector('.sp').onclick=function(){go(i-1);rs()};ss.querySelector('.sn').onclick=function(){go(i+1);rs()};function rs(){clearInterval(tm);tm=setInterval(function(){go(i+1)},4500)}go(0);rs()})();</script>
+</body></html>

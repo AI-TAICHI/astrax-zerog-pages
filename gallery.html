@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ギャラリー | ASTRAX無重力飛行サービス（デザイン案）</title>
+<style>:root{--navy:#0b1f4b;--navy2:#13306e;--orange:#e8590c;--ink:#1b2236;--mute:#5b6478;--line:#e3e8f2;--bg:#f5f7fc;--w:980px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;color:var(--ink);background:#fff;line-height:1.85;font-size:16px;-webkit-font-smoothing:antialiased}
+a{color:var(--navy2);text-decoration:none}a:hover{color:var(--orange)}
+.wrap{max-width:var(--w);margin:0 auto;padding:0 20px}
+/* ヘッダー */
+header.top{position:sticky;top:0;z-index:50;background:rgba(11,31,75,.97);backdrop-filter:blur(6px);box-shadow:0 2px 14px rgba(0,0,0,.18)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:10px;padding-bottom:6px}
+.brand{display:flex;flex-direction:column;line-height:1.2;color:#fff}
+.brand .b1{font-size:12px;letter-spacing:.32em;color:#ff8a4c;font-weight:700}
+.brand .b2{font-size:19px;font-weight:800;letter-spacing:.04em}
+.cta a{display:inline-block;background:var(--orange);color:#fff;padding:9px 20px;border-radius:999px;font-weight:700;font-size:14px}
+.cta a:hover{background:#ff7a2f;color:#fff}
+nav.menu{display:flex;gap:2px;overflow-x:auto;padding-bottom:8px;scrollbar-width:none}
+nav.menu a{color:#c9d4ef;padding:7px 12px;font-size:13px;white-space:nowrap;border-radius:6px}
+nav.menu a:hover{color:#fff;background:rgba(255,255,255,.1)}
+nav.menu a.on{color:#fff;background:var(--orange)}
+/* ヒーロー */
+.hero{background:radial-gradient(1200px 400px at 80% -10%,#274a99 0,transparent 60%),linear-gradient(160deg,#0b1f4b 0%,#102a63 60%,#173a82 100%);color:#fff;padding:64px 0 56px;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;inset:auto -10% -60px -10%;height:120px;background:#fff;border-radius:50% 50% 0 0/100% 100% 0 0}
+.hero .eyebrow{margin:0 0 10px;font-size:12px;letter-spacing:.35em;color:#ff9a63;text-transform:uppercase}
+.hero h1{margin:0;font-size:clamp(28px,5vw,46px);line-height:1.25;font-weight:800;letter-spacing:.02em}
+/* 本文 */
+main.wrap{padding-top:24px;padding-bottom:70px}
+.sec{margin:0 0 44px}
+.sec h2{font-size:24px;margin:0 0 18px;padding-left:14px;border-left:6px solid var(--orange);color:var(--navy);line-height:1.35}
+.sec p{margin:0 0 14px}.sec p.small{font-size:13px;color:var(--mute)}
+.sec ul{margin:0 0 14px;padding-left:22px}.sec li{margin:4px 0}
+.sec b{color:var(--navy)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px;margin:12px 0 18px}
+.grid figure{margin:0;border-radius:10px;overflow:hidden;background:var(--bg);aspect-ratio:4/3;cursor:zoom-in;box-shadow:0 1px 4px rgba(11,31,75,.12);transition:transform .2s,box-shadow .2s}
+.grid figure:hover{transform:translateY(-3px);box-shadow:0 8px 18px rgba(11,31,75,.25)}
+.grid img{width:100%;height:100%;object-fit:cover;display:block}
+figure.one{margin:14px 0}figure.one img{max-width:100%;border-radius:12px;box-shadow:0 4px 18px rgba(11,31,75,.18)}
+.videos{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;margin:14px 0}
+.vid{position:relative;padding-top:56.25%;border-radius:12px;overflow:hidden;box-shadow:0 4px 18px rgba(11,31,75,.2);background:#000}
+.vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0}
+.btn{display:inline-block;background:var(--navy);color:#fff;padding:11px 22px;border-radius:8px;font-weight:700;font-size:14px;transition:.2s}
+.btn:hover{background:var(--orange);color:#fff;transform:translateY(-2px)}
+.btn.alt{background:#fff;color:var(--navy);border:2px solid var(--navy)}
+/* ライトボックス */
+#lb{position:fixed;inset:0;background:rgba(5,12,32,.93);display:none;align-items:center;justify-content:center;z-index:100}
+#lb.on{display:flex}#lb img{max-width:92vw;max-height:86vh;border-radius:8px}
+#lb button{position:absolute;background:rgba(255,255,255,.14);color:#fff;border:0;font-size:30px;width:52px;height:52px;border-radius:50%;cursor:pointer}
+#lb .x{top:18px;right:18px}#lb .p{left:18px;top:50%}#lb .n{right:18px;top:50%}
+/* フッター */
+footer{background:var(--navy);color:#c9d4ef;padding:40px 0;text-align:center;font-size:14px}
+footer a{color:#fff}footer .fb{font-size:22px;font-weight:800;letter-spacing:.3em;color:#fff;margin-bottom:10px}footer .cp{font-size:12px;opacity:.7}
+@media(max-width:640px){.brand .b2{font-size:16px}.cta a{padding:7px 14px;font-size:12px}.hero{padding:44px 0 46px}.sec h2{font-size:20px}}
+
+.ss{margin:6px 0 30px}.ss .stage{position:relative;border-radius:16px;overflow:hidden;background:#0b1f4b;aspect-ratio:16/9;box-shadow:0 10px 30px rgba(11,31,75,.3)}
+.ss .stage img{width:100%;height:100%;object-fit:contain;display:block}
+.ss .stage button{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;border:0;background:rgba(255,255,255,.85);color:var(--navy);font-size:28px;cursor:pointer}
+.ss .sp{left:12px}.ss .sn{right:12px}
+.ss .thumbs{display:flex;gap:8px;overflow-x:auto;padding:10px 2px 4px;scrollbar-width:thin}
+.ss .thumbs img{height:64px;width:auto;border-radius:8px;opacity:.55;cursor:pointer;transition:.2s;flex:0 0 auto}
+.ss .thumbs img.on,.ss .thumbs img:hover{opacity:1;outline:3px solid var(--orange)}
+</style></head><body>
+<header class="top"><div class="wrap">
+ <a class="brand" href="/" target="_top"><span class="b1">ASTRAX ZERO GRAVITY</span><span class="b2">ASTRAX無重力飛行サービス</span></a>
+ <div class="cta"><a href="/contact" target="_top">お問合せ</a></div>
+</div>
+<nav class="wrap menu"><a href="/" target="_top">ホーム</a><a href="/about" target="_top">無重力飛行とは</a><a href="/blank-1" target="_top">無重力の使い方</a><a href="/無重力の効果" target="_top">体験の効果</a><a href="/conditions" target="_top">参加条件</a><a href="/flow" target="_top">流れ</a><a href="/schedule" target="_top">当日</a><a href="/cost" target="_top">料金</a><a href="/voice" target="_top">体験者の声</a><a href="/gallery" target="_top" class="on">ギャラリー</a><a href="/contact" target="_top">お問合せ</a></nav></header>
+<div class="hero"><div class="wrap"><p class="eyebrow">Zero Gravity Flight Experience in Japan</p><h1>ギャラリー</h1></div></div>
+<main class="wrap">
+<section class="sec"><h2>これまで実施してきた無重力飛行の様子（写真）</h2>
+<div class="ss" id="ss"><div class="stage"><img id="ssBig" src="https://static.wixstatic.com/media/d03fa8_07d8df22faec4353814168d7a3e786dd~mv2.png" alt=""><button class="sp">&#8249;</button><button class="sn">&#8250;</button></div><div class="thumbs"><img loading="lazy" src="https://static.wixstatic.com/media/d03fa8_07d8df22faec4353814168d7a3e786dd~mv2.png" data-k="0" alt=""><img loading="lazy" src="https://static.wixstatic.com/media/d03fa8_17735a9406974e3688283dc6c825a87e~mv2.png" data-k="1" alt=""><img loading="lazy" src="https://static.wixstatic.com/media/36dff5_5f9b5976afae45599a99f12d52c3d65c~mv2.png" data-k="2" alt=""><img loading="lazy" src="https://static.wixstatic.com/media/36dff5_adf1414c19f24c08b30cbb11e6b6338d~mv2.png" data-k="3" alt=""><img loading="lazy" src="https://static.wixstatic.com/media/36dff5_7f36c3de70684f1f8cf46b7e3d35cf26~mv2.png" data-k="4" alt=""><img loading="lazy" src="https://static.wixstatic.com/media/36dff5_8dde71ab16cb418d9c2d4f45efd22222~mv2.png" data-k="5" alt=""><img loading="lazy" src="https://static.wixstatic.com/media/36dff5_46aeedcd42a24bfc9ddba8a9d8870fc3~mv2.png" data-k="6" alt=""><img loading="lazy" src="https://static.wixstatic.com/media/36dff5_7f2878e3b9ed42859990c322cd7b08d4~mv2.png" data-k="7" alt=""><img loading="lazy" src="https://static.wixstatic.com/media/36dff5_96fafa867b784347869c6ca5a3b187e0~mv2.png" data-k="8" alt=""><img loading="lazy" src="https://static.wixstatic.com/media/36dff5_80273c39c0f5400bad0d4614b484d08c~mv2.png" data-k="9" alt=""><img loading="lazy" src="https://static.wixstatic.com/media/36dff5_cd34fa7151d64262b6082023fe94ff0c~mv2.png" data-k="10" alt=""><img loading="lazy" src="https://static.wixstatic.com/media/36dff5_2cbc28f995ca4ccf90b7fff2f188673e~mv2.png" data-k="11" alt=""><img loading="lazy" src="https://static.wixstatic.com/media/36dff5_fc767b30485f4d0caa251d92b6e7205c~mv2.png" data-k="12" alt=""><img loading="lazy" src="https://static.wixstatic.com/media/36dff5_a5a9889200e443b79a19ec0db6e7c396~mv2.png" data-k="13" alt=""><img loading="lazy" src="https://static.wixstatic.com/media/36dff5_3c4ceb85278447f78850b5a7aaaf2450~mv2.png" data-k="14" alt=""><img loading="lazy" src="https://static.wixstatic.com/media/36dff5_5fe0856122a343cfa8b696327bce85f2~mv2.png" data-k="15" alt=""><img loading="lazy" src="https://static.wixstatic.com/media/36dff5_5db8ddfd3cd843d2a70dfd0922902a25~mv2.png" data-k="16" alt=""><img loading="lazy" src="https://static.wixstatic.com/media/36dff5_7ee3452ece8840918c52915f7693c219~mv2.png" data-k="17" alt=""></div></div>
+</section>
+<section class="sec"><h2>これまで実施してきた無重力飛行の様子（動画）</h2>
+</section>
+<section class="sec"><h2>2022年6月16日実施の無重力飛行（最新）</h2>
+</section>
+<section class="sec"><h2>2022年3月24日実施の無重力飛行（前回）</h2>
+</section>
+<section class="sec"><h2>過去に実施のASTRAX無重力飛行PV</h2>
+</section>
+<section class="sec"><h2>個別の無重力飛行シーン</h2>
+</section>
+<section class="sec"><h2>無重力に関わるPV映像や番組、CMや映画（メイキングも含む）</h2>
+</section>
+<section class="sec"><h2>これまでの無重力飛行の様子</h2>
+<div class="videos"><div class="vid"><iframe loading="lazy" src="https://www.youtube.com/embed/NOLdIGeyNPM" allowfullscreen></iframe></div><div class="vid"><iframe loading="lazy" src="https://www.youtube.com/embed/HK02Z8dQ4ko" allowfullscreen></iframe></div><div class="vid"><iframe loading="lazy" src="https://www.youtube.com/embed/6jBfS14s9wM" allowfullscreen></iframe></div><div class="vid"><iframe loading="lazy" src="https://www.youtube.com/embed/M42Blr6Eml0" allowfullscreen></iframe></div><div class="vid"><iframe loading="lazy" src="https://www.youtube.com/embed/DsieAIyQqK0" allowfullscreen></iframe></div><div class="vid"><iframe loading="lazy" src="https://www.youtube.com/embed/MDewjnPy0mE" allowfullscreen></iframe></div><div class="vid"><iframe loading="lazy" src="https://www.youtube.com/embed/w4K8fJFmWrE" allowfullscreen></iframe></div><div class="vid"><iframe loading="lazy" src="https://www.youtube.com/embed/r__COfIG4H4" allowfullscreen></iframe></div><div class="vid"><iframe loading="lazy" src="https://www.youtube.com/embed/vzi56h_i3CA" allowfullscreen></iframe></div><div class="vid"><iframe loading="lazy" src="https://www.youtube.com/embed/iJpUFPTGwsU" allowfullscreen></iframe></div><div class="vid"><iframe loading="lazy" src="https://www.youtube.com/embed/FE5NJGKvmco" allowfullscreen></iframe></div><div class="vid"><iframe loading="lazy" src="https://www.youtube.com/embed/OF4_CgqzYwU" allowfullscreen></iframe></div><div class="vid"><iframe loading="lazy" src="https://www.youtube.com/embed/HG6ChEvYzZY" allowfullscreen></iframe></div><div class="vid"><iframe loading="lazy" src="https://www.youtube.com/embed/d7WXYtLN4fU" allowfullscreen></iframe></div><div class="vid"><iframe loading="lazy" src="https://www.youtube.com/embed/hwydrnEVXBg" allowfullscreen></iframe></div><div class="vid"><iframe loading="lazy" src="https://www.youtube.com/embed/_-pRzb1-15o" allowfullscreen></iframe></div><div class="vid"><iframe loading="lazy" src="https://www.youtube.com/embed/PM8EvWL-_wM" allowfullscreen></iframe></div><div class="vid"><iframe loading="lazy" src="https://www.youtube.com/embed/AvQpqZzTHD4" allowfullscreen></iframe></div><div class="vid"><iframe loading="lazy" src="https://www.youtube.com/embed/qLuZGshpN50" allowfullscreen></iframe></div><div class="vid"><iframe loading="lazy" src="https://www.youtube.com/embed/gzG4iJx_9Us" allowfullscreen></iframe></div><div class="vid"><iframe loading="lazy" src="https://www.youtube.com/embed/ymCJMjZnS54" allowfullscreen></iframe></div><div class="vid"><iframe loading="lazy" src="https://www.youtube.com/embed/DeODQqUbziw" allowfullscreen></iframe></div><div class="vid"><iframe loading="lazy" src="https://www.youtube.com/embed/9-tTjz3UbI0" allowfullscreen></iframe></div><div class="vid"><iframe loading="lazy" src="https://www.youtube.com/embed/c44gsV0on0U" allowfullscreen></iframe></div><div class="vid"><iframe loading="lazy" src="https://www.youtube.com/embed/NRTYOcQYtt4" allowfullscreen></iframe></div><div class="vid"><iframe loading="lazy" src="https://www.youtube.com/embed/lkIbMqBWQqE" allowfullscreen></iframe></div><div class="vid"><iframe loading="lazy" src="https://www.youtube.com/embed/HRW2t-3a7SM" allowfullscreen></iframe></div><div class="vid"><iframe loading="lazy" src="https://www.youtube.com/embed/o9V_q61lXp8" allowfullscreen></iframe></div><div class="vid"><iframe loading="lazy" src="https://www.youtube.com/embed/XQvSlVKS9iQ" allowfullscreen></iframe></div><div class="vid"><iframe loading="lazy" src="https://www.youtube.com/embed/R2YkBLZmfh0" allowfullscreen></iframe></div><div class="vid"><iframe loading="lazy" src="https://www.youtube.com/embed/Uv_pqoRkH2s" allowfullscreen></iframe></div><div class="vid"><iframe loading="lazy" src="https://www.youtube.com/embed/LWGJA9i18Co" allowfullscreen></iframe></div><div class="vid"><iframe loading="lazy" src="https://www.youtube.com/embed/77-pNVbE0Uw" allowfullscreen></iframe></div><div class="vid"><iframe loading="lazy" src="https://www.youtube.com/embed/IMIPTtvAuUU" allowfullscreen></iframe></div><div class="vid"><iframe loading="lazy" src="https://www.youtube.com/embed/zwpRR6AxfaY" allowfullscreen></iframe></div><div class="vid"><iframe loading="lazy" src="https://www.youtube.com/embed/SdgELXIeY3I" allowfullscreen></iframe></div><div class="vid"><iframe loading="lazy" src="https://www.youtube.com/embed/OtgScc_ryL0" allowfullscreen></iframe></div><div class="vid"><iframe loading="lazy" src="https://www.youtube.com/embed/u9pkjHWAZLs" allowfullscreen></iframe></div><div class="vid"><iframe loading="lazy" src="https://www.youtube.com/embed/1ieR8hIXUIg" allowfullscreen></iframe></div><div class="vid"><iframe loading="lazy" src="https://www.youtube.com/embed/bukEuYFQaDU" allowfullscreen></iframe></div><div class="vid"><iframe loading="lazy" src="https://www.youtube.com/embed/IVMICgfzICs" allowfullscreen></iframe></div><div class="vid"><iframe loading="lazy" src="https://www.youtube.com/embed/pQXGbep6S2c" allowfullscreen></iframe></div><div class="vid"><iframe loading="lazy" src="https://www.youtube.com/embed/mN43Hw4JrUQ" allowfullscreen></iframe></div><div class="vid"><iframe loading="lazy" src="https://www.youtube.com/embed/lzCxZI-63ts" allowfullscreen></iframe></div></div>
+</section>
+</main>
+<footer><div class="wrap"><div class="fb">ASTRAX</div>
+<p>E-mail: <a href="mailto:astrax_zero.g@iss-japan.com">astrax_zero.g@iss-japan.com</a><br>Web: <a href="https://astrax.space">https://astrax.space</a><br>FB Page: <a href="https://www.facebook.com/ZERO.G.Challenger/">https://www.facebook.com/ZERO.G.Challenger/</a></p>
+<p class="cp">株式会社ASTRAX／有限会社国際宇宙サービス　© 2026 ASTRAX All rights reserved.</p></div></footer>
+<div id="lb"><button class="x">×</button><button class="p">‹</button><img alt=""><button class="n">›</button></div>
+<script>(function(){var im=[].slice.call(document.querySelectorAll('.grid img,figure.one img')),lb=document.getElementById('lb'),v=lb.querySelector('img'),i=0;function s(k){i=(k+im.length)%im.length;v.src=im[i].src;lb.classList.add('on')}im.forEach(function(e,k){e.addEventListener('click',function(){s(k)})});lb.querySelector('.x').onclick=function(){lb.classList.remove('on')};lb.querySelector('.p').onclick=function(){s(i-1)};lb.querySelector('.n').onclick=function(){s(i+1)};document.addEventListener('keydown',function(e){if(!lb.classList.contains('on'))return;if(e.key==='Escape')lb.classList.remove('on');if(e.key==='ArrowLeft')s(i-1);if(e.key==='ArrowRight')s(i+1)})})();</script>
+<script>(function(){var ss=document.getElementById('ss');if(!ss)return;var big=document.getElementById('ssBig'),th=[].slice.call(ss.querySelectorAll('.thumbs img')),i=0,tm;function go(k){i=(k+th.length)%th.length;big.src=th[i].src;th.forEach(function(e,j){e.classList.toggle('on',j===i)});var bx=th[i].parentNode;bx.scrollLeft=th[i].offsetLeft-bx.clientWidth/2+th[i].clientWidth/2}th.forEach(function(e,k){e.addEventListener('click',function(){go(k);rs()})});ss.querySelector('.sp').onclick=function(){go(i-1);rs()};ss.querySelector('.sn').onclick=function(){go(i+1);rs()};function rs(){clearInterval(tm);tm=setInterval(function(){go(i+1)},4500)}go(0);rs()})();</script>
+</body></html>

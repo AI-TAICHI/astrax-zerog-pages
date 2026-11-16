@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>参加条件 | ASTRAX無重力飛行サービス（デザイン案）</title>
+<style>:root{--navy:#0b1f4b;--navy2:#13306e;--orange:#e8590c;--ink:#1b2236;--mute:#5b6478;--line:#e3e8f2;--bg:#f5f7fc;--w:980px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;color:var(--ink);background:#fff;line-height:1.85;font-size:16px;-webkit-font-smoothing:antialiased}
+a{color:var(--navy2);text-decoration:none}a:hover{color:var(--orange)}
+.wrap{max-width:var(--w);margin:0 auto;padding:0 20px}
+/* ヘッダー */
+header.top{position:sticky;top:0;z-index:50;background:rgba(11,31,75,.97);backdrop-filter:blur(6px);box-shadow:0 2px 14px rgba(0,0,0,.18)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:10px;padding-bottom:6px}
+.brand{display:flex;flex-direction:column;line-height:1.2;color:#fff}
+.brand .b1{font-size:12px;letter-spacing:.32em;color:#ff8a4c;font-weight:700}
+.brand .b2{font-size:19px;font-weight:800;letter-spacing:.04em}
+.cta a{display:inline-block;background:var(--orange);color:#fff;padding:9px 20px;border-radius:999px;font-weight:700;font-size:14px}
+.cta a:hover{background:#ff7a2f;color:#fff}
+nav.menu{display:flex;gap:2px;overflow-x:auto;padding-bottom:8px;scrollbar-width:none}
+nav.menu a{color:#c9d4ef;padding:7px 12px;font-size:13px;white-space:nowrap;border-radius:6px}
+nav.menu a:hover{color:#fff;background:rgba(255,255,255,.1)}
+nav.menu a.on{color:#fff;background:var(--orange)}
+/* ヒーロー */
+.hero{background:radial-gradient(1200px 400px at 80% -10%,#274a99 0,transparent 60%),linear-gradient(160deg,#0b1f4b 0%,#102a63 60%,#173a82 100%);color:#fff;padding:64px 0 56px;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;inset:auto -10% -60px -10%;height:120px;background:#fff;border-radius:50% 50% 0 0/100% 100% 0 0}
+.hero .eyebrow{margin:0 0 10px;font-size:12px;letter-spacing:.35em;color:#ff9a63;text-transform:uppercase}
+.hero h1{margin:0;font-size:clamp(28px,5vw,46px);line-height:1.25;font-weight:800;letter-spacing:.02em}
+/* 本文 */
+main.wrap{padding-top:24px;padding-bottom:70px}
+.sec{margin:0 0 44px}
+.sec h2{font-size:24px;margin:0 0 18px;padding-left:14px;border-left:6px solid var(--orange);color:var(--navy);line-height:1.35}
+.sec p{margin:0 0 14px}.sec p.small{font-size:13px;color:var(--mute)}
+.sec ul{margin:0 0 14px;padding-left:22px}.sec li{margin:4px 0}
+.sec b{color:var(--navy)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px;margin:12px 0 18px}
+.grid figure{margin:0;border-radius:10px;overflow:hidden;background:var(--bg);aspect-ratio:4/3;cursor:zoom-in;box-shadow:0 1px 4px rgba(11,31,75,.12);transition:transform .2s,box-shadow .2s}
+.grid figure:hover{transform:translateY(-3px);box-shadow:0 8px 18px rgba(11,31,75,.25)}
+.grid img{width:100%;height:100%;object-fit:cover;display:block}
+figure.one{margin:14px 0}figure.one img{max-width:100%;border-radius:12px;box-shadow:0 4px 18px rgba(11,31,75,.18)}
+.videos{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;margin:14px 0}
+.vid{position:relative;padding-top:56.25%;border-radius:12px;overflow:hidden;box-shadow:0 4px 18px rgba(11,31,75,.2);background:#000}
+.vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0}
+.btn{display:inline-block;background:var(--navy);color:#fff;padding:11px 22px;border-radius:8px;font-weight:700;font-size:14px;transition:.2s}
+.btn:hover{background:var(--orange);color:#fff;transform:translateY(-2px)}
+.btn.alt{background:#fff;color:var(--navy);border:2px solid var(--navy)}
+/* ライトボックス */
+#lb{position:fixed;inset:0;background:rgba(5,12,32,.93);display:none;align-items:center;justify-content:center;z-index:100}
+#lb.on{display:flex}#lb img{max-width:92vw;max-height:86vh;border-radius:8px}
+#lb button{position:absolute;background:rgba(255,255,255,.14);color:#fff;border:0;font-size:30px;width:52px;height:52px;border-radius:50%;cursor:pointer}
+#lb .x{top:18px;right:18px}#lb .p{left:18px;top:50%}#lb .n{right:18px;top:50%}
+/* フッター */
+footer{background:var(--navy);color:#c9d4ef;padding:40px 0;text-align:center;font-size:14px}
+footer a{color:#fff}footer .fb{font-size:22px;font-weight:800;letter-spacing:.3em;color:#fff;margin-bottom:10px}footer .cp{font-size:12px;opacity:.7}
+@media(max-width:640px){.brand .b2{font-size:16px}.cta a{padding:7px 14px;font-size:12px}.hero{padding:44px 0 46px}.sec h2{font-size:20px}}
+
+.ss{margin:6px 0 30px}.ss .stage{position:relative;border-radius:16px;overflow:hidden;background:#0b1f4b;aspect-ratio:16/9;box-shadow:0 10px 30px rgba(11,31,75,.3)}
+.ss .stage img{width:100%;height:100%;object-fit:contain;display:block}
+.ss .stage button{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;border:0;background:rgba(255,255,255,.85);color:var(--navy);font-size:28px;cursor:pointer}
+.ss .sp{left:12px}.ss .sn{right:12px}
+.ss .thumbs{display:flex;gap:8px;overflow-x:auto;padding:10px 2px 4px;scrollbar-width:thin}
+.ss .thumbs img{height:64px;width:auto;border-radius:8px;opacity:.55;cursor:pointer;transition:.2s;flex:0 0 auto}
+.ss .thumbs img.on,.ss .thumbs img:hover{opacity:1;outline:3px solid var(--orange)}
+</style></head><body>
+<header class="top"><div class="wrap">
+ <a class="brand" href="/" target="_top"><span class="b1">ASTRAX ZERO GRAVITY</span><span class="b2">ASTRAX無重力飛行サービス</span></a>
+ <div class="cta"><a href="/contact" target="_top">お問合せ</a></div>
+</div>
+<nav class="wrap menu"><a href="/" target="_top">ホーム</a><a href="/about" target="_top">無重力飛行とは</a><a href="/blank-1" target="_top">無重力の使い方</a><a href="/無重力の効果" target="_top">体験の効果</a><a href="/conditions" target="_top" class="on">参加条件</a><a href="/flow" target="_top">流れ</a><a href="/schedule" target="_top">当日</a><a href="/cost" target="_top">料金</a><a href="/voice" target="_top">体験者の声</a><a href="/gallery" target="_top">ギャラリー</a><a href="/contact" target="_top">お問合せ</a></nav></header>
+<div class="hero"><div class="wrap"><p class="eyebrow">Zero Gravity Flight Experience in Japan</p><h1>参加条件</h1></div></div>
+<main class="wrap">
+<section class="sec"><h2>無重力飛行への参加可否基準</h2>
+<p>搭乗者は以下の条件を満たしている必要があります。</p>
+<p>1 　日本国籍の方であること。（搭乗は軍事セキュリティの制限により、日本国籍の方に限ります。）</p>
+<p>2 　年齢が 10 歳 ~ 70 歳であること。<br>
+　　3 　「ASTRAX無重力飛行参加申込書&amp;同意書」を提出していること。<br>
+　　4 　医学検査で搭乗可否判断基準に合致していること。</p>
+<p>(健康診断を受け、結果をご提出ください。詳細は<b><a href="https://www.astrax-zerog.space/conditions">次の項目</a></b>をご確認ください。）<br>
+　　5 　既往歴等の自己申告書に示す搭乗判断基準に合致していること</p>
+<p>(既往歴等申告書をご記入いただきご提出ください。）<br>
+　　6 　健康状況報告書（搭乗当日、本人に状況を確認します）において異常がみとめられないこと。<br>
+　　7 　安全教育を受講していること。(搭乗当日に授業を行います。）</p>
+</section>
+<section class="sec"><h2>健康診断について</h2>
+<p>（１）10 歳 ~ 65 歳の搭乗者</p>
+<ul><li>搭乗者は事前に医療機関による健康診断を受け、その診断書（健康診断結果）を提出してください。</li><li>健康診断の内容は少なくとも以下の1〜３の項目を含むものとします。各項目の搭乗可否判断基準は以下のとおりです。</li></ul>
+<p>１ 血圧検査</p>
+<p>収縮期血圧 160 mmHg 未満、拡張期血圧 95 mmHg 未満であり、かつ、</p>
+<p>自覚症状を伴う起立性低血圧がないこと。</p>
+<p>2 尿検査</p>
+<p>蛋白および糖がプラスでないこと。 （ - , ± はOK）</p>
+<p>3 内科検診(問診)</p>
+<p>問診等により心臓、肺、内臓等に欠陥が認められないこと。</p>
+<ul><li>健康診断書の書式は任意の様式で構いませんが、病院名及び担当医師の印またはサインが必要です。</li><li>様式がない場合は、こちらのフォームを印刷してご利用ください。</li><li>健康診断にかかる費用（5,000円前後）はお客様によるご負担となります。</li></ul>
+<p>（２）66歳~70歳の搭乗者</p>
+<ul><li>搭乗者は事前に指定検査医による第 2 種航空身体検査、もしくは FAA 3rd Medical Certificate か、これと同等の検査を受け、それに合格(適合)しなければなりません。</li><li>検査項目など詳細はお問合せください。</li><li>健康診断にかかる費用（30,000円前後）はお客様によるご負担となります。</li></ul>
+<p>（３）健康診断等の有効期限</p>
+<ul><li>健康診断の有効期限は発行日から<b> 6 ヶ月</b>とします。</li><li>第 2 種航空身体検査、もしくは FAA 3rd Medical Certificate かこれと同等の検査の場合の有効期限は、<b>発行日から 1 年</b>とします。</li></ul>
+</section>
+<section class="sec"><h2>既往歴等について</h2>
+<ul><li>搭乗者は、前項の項目を含む自身の既往歴等について、「既往歴等自己申告書」に記載し、健康診断書等とともに ASTRAX に提出してください。航空身体検査等で前項の項目を含む検査書がある場合には、この限りではありません。</li><li>搭乗者は、<b>過去 5 年以内</b>に、以下に示す既往歴等の条件を全て満たしている必要があります。</li></ul>
+<p>（ただし、完治したことが健康診断書等によって明らかな場合はこの限りではありません）</p>
+<p>1 貧血症、てんかんまたは痙攣の症状がないこと。</p>
+<p>2 失神または意識障害のないこと。<br>
+　　3 耳または鼻に疾患のないこと。<br>
+　　4 喘息または他のアレルギーがないこと。</p>
+<p>5 肺に疾患のないこと。<br>
+　　6 糖尿病でないこと。<br>
+　　7 精神または神経系に疾患のないこと。<br>
+　　8 睡眠薬または医療品の常用者でないこと。<br>
+　　9 治療を必要とする乗り物酔いがないこと。<br>
+　　10 薬物、アルコールの常用者でないこと。<br>
+　　11 骨折等日常生活に支障を来たす外傷がないこと。</p>
+<p>12 妊娠中でないこと。<br>
+　　13 頻繁または重度の頭痛がないこと。<br>
+　　14 心臓に疾患がないこと。<br>
+　　15 重大な感染症またはその疑いがないこと。</p>
+</section>
+</main>
+<footer><div class="wrap"><div class="fb">ASTRAX</div>
+<p>E-mail: <a href="mailto:astrax_zero.g@iss-japan.com">astrax_zero.g@iss-japan.com</a><br>Web: <a href="https://astrax.space">https://astrax.space</a><br>FB Page: <a href="https://www.facebook.com/ZERO.G.Challenger/">https://www.facebook.com/ZERO.G.Challenger/</a></p>
+<p class="cp">株式会社ASTRAX／有限会社国際宇宙サービス　© 2026 ASTRAX All rights reserved.</p></div></footer>
+<div id="lb"><button class="x">×</button><button class="p">‹</button><img alt=""><button class="n">›</button></div>
+<script>(function(){var im=[].slice.call(document.querySelectorAll('.grid img,figure.one img')),lb=document.getElementById('lb'),v=lb.querySelector('img'),i=0;function s(k){i=(k+im.length)%im.length;v.src=im[i].src;lb.classList.add('on')}im.forEach(function(e,k){e.addEventListener('click',function(){s(k)})});lb.querySelector('.x').onclick=function(){lb.classList.remove('on')};lb.querySelector('.p').onclick=function(){s(i-1)};lb.querySelector('.n').onclick=function(){s(i+1)};document.addEventListener('keydown',function(e){if(!lb.classList.contains('on'))return;if(e.key==='Escape')lb.classList.remove('on');if(e.key==='ArrowLeft')s(i-1);if(e.key==='ArrowRight')s(i+1)})})();</script>
+<script>(function(){var ss=document.getElementById('ss');if(!ss)return;var big=document.getElementById('ssBig'),th=[].slice.call(ss.querySelectorAll('.thumbs img')),i=0,tm;function go(k){i=(k+th.length)%th.length;big.src=th[i].src;th.forEach(function(e,j){e.classList.toggle('on',j===i)});var bx=th[i].parentNode;bx.scrollLeft=th[i].offsetLeft-bx.clientWidth/2+th[i].clientWidth/2}th.forEach(function(e,k){e.addEventListener('click',function(){go(k);rs()})});ss.querySelector('.sp').onclick=function(){go(i-1);rs()};ss.querySelector('.sn').onclick=function(){go(i+1);rs()};function rs(){clearInterval(tm);tm=setInterval(function(){go(i+1)},4500)}go(0);rs()})();</script>
+</body></html>

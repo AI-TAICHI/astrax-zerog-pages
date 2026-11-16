@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>無重力関連論文 | ASTRAX無重力飛行サービス（デザイン案）</title>
+<style>:root{--navy:#0b1f4b;--navy2:#13306e;--orange:#e8590c;--ink:#1b2236;--mute:#5b6478;--line:#e3e8f2;--bg:#f5f7fc;--w:980px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;color:var(--ink);background:#fff;line-height:1.85;font-size:16px;-webkit-font-smoothing:antialiased}
+a{color:var(--navy2);text-decoration:none}a:hover{color:var(--orange)}
+.wrap{max-width:var(--w);margin:0 auto;padding:0 20px}
+/* ヘッダー */
+header.top{position:sticky;top:0;z-index:50;background:rgba(11,31,75,.97);backdrop-filter:blur(6px);box-shadow:0 2px 14px rgba(0,0,0,.18)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:10px;padding-bottom:6px}
+.brand{display:flex;flex-direction:column;line-height:1.2;color:#fff}
+.brand .b1{font-size:12px;letter-spacing:.32em;color:#ff8a4c;font-weight:700}
+.brand .b2{font-size:19px;font-weight:800;letter-spacing:.04em}
+.cta a{display:inline-block;background:var(--orange);color:#fff;padding:9px 20px;border-radius:999px;font-weight:700;font-size:14px}
+.cta a:hover{background:#ff7a2f;color:#fff}
+nav.menu{display:flex;gap:2px;overflow-x:auto;padding-bottom:8px;scrollbar-width:none}
+nav.menu a{color:#c9d4ef;padding:7px 12px;font-size:13px;white-space:nowrap;border-radius:6px}
+nav.menu a:hover{color:#fff;background:rgba(255,255,255,.1)}
+nav.menu a.on{color:#fff;background:var(--orange)}
+/* ヒーロー */
+.hero{background:radial-gradient(1200px 400px at 80% -10%,#274a99 0,transparent 60%),linear-gradient(160deg,#0b1f4b 0%,#102a63 60%,#173a82 100%);color:#fff;padding:64px 0 56px;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;inset:auto -10% -60px -10%;height:120px;background:#fff;border-radius:50% 50% 0 0/100% 100% 0 0}
+.hero .eyebrow{margin:0 0 10px;font-size:12px;letter-spacing:.35em;color:#ff9a63;text-transform:uppercase}
+.hero h1{margin:0;font-size:clamp(28px,5vw,46px);line-height:1.25;font-weight:800;letter-spacing:.02em}
+/* 本文 */
+main.wrap{padding-top:24px;padding-bottom:70px}
+.sec{margin:0 0 44px}
+.sec h2{font-size:24px;margin:0 0 18px;padding-left:14px;border-left:6px solid var(--orange);color:var(--navy);line-height:1.35}
+.sec p{margin:0 0 14px}.sec p.small{font-size:13px;color:var(--mute)}
+.sec ul{margin:0 0 14px;padding-left:22px}.sec li{margin:4px 0}
+.sec b{color:var(--navy)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px;margin:12px 0 18px}
+.grid figure{margin:0;border-radius:10px;overflow:hidden;background:var(--bg);aspect-ratio:4/3;cursor:zoom-in;box-shadow:0 1px 4px rgba(11,31,75,.12);transition:transform .2s,box-shadow .2s}
+.grid figure:hover{transform:translateY(-3px);box-shadow:0 8px 18px rgba(11,31,75,.25)}
+.grid img{width:100%;height:100%;object-fit:cover;display:block}
+figure.one{margin:14px 0}figure.one img{max-width:100%;border-radius:12px;box-shadow:0 4px 18px rgba(11,31,75,.18)}
+.videos{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;margin:14px 0}
+.vid{position:relative;padding-top:56.25%;border-radius:12px;overflow:hidden;box-shadow:0 4px 18px rgba(11,31,75,.2);background:#000}
+.vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0}
+.btn{display:inline-block;background:var(--navy);color:#fff;padding:11px 22px;border-radius:8px;font-weight:700;font-size:14px;transition:.2s}
+.btn:hover{background:var(--orange);color:#fff;transform:translateY(-2px)}
+.btn.alt{background:#fff;color:var(--navy);border:2px solid var(--navy)}
+/* ライトボックス */
+#lb{position:fixed;inset:0;background:rgba(5,12,32,.93);display:none;align-items:center;justify-content:center;z-index:100}
+#lb.on{display:flex}#lb img{max-width:92vw;max-height:86vh;border-radius:8px}
+#lb button{position:absolute;background:rgba(255,255,255,.14);color:#fff;border:0;font-size:30px;width:52px;height:52px;border-radius:50%;cursor:pointer}
+#lb .x{top:18px;right:18px}#lb .p{left:18px;top:50%}#lb .n{right:18px;top:50%}
+/* フッター */
+footer{background:var(--navy);color:#c9d4ef;padding:40px 0;text-align:center;font-size:14px}
+footer a{color:#fff}footer .fb{font-size:22px;font-weight:800;letter-spacing:.3em;color:#fff;margin-bottom:10px}footer .cp{font-size:12px;opacity:.7}
+@media(max-width:640px){.brand .b2{font-size:16px}.cta a{padding:7px 14px;font-size:12px}.hero{padding:44px 0 46px}.sec h2{font-size:20px}}
+
+.ss{margin:6px 0 30px}.ss .stage{position:relative;border-radius:16px;overflow:hidden;background:#0b1f4b;aspect-ratio:16/9;box-shadow:0 10px 30px rgba(11,31,75,.3)}
+.ss .stage img{width:100%;height:100%;object-fit:contain;display:block}
+.ss .stage button{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;border:0;background:rgba(255,255,255,.85);color:var(--navy);font-size:28px;cursor:pointer}
+.ss .sp{left:12px}.ss .sn{right:12px}
+.ss .thumbs{display:flex;gap:8px;overflow-x:auto;padding:10px 2px 4px;scrollbar-width:thin}
+.ss .thumbs img{height:64px;width:auto;border-radius:8px;opacity:.55;cursor:pointer;transition:.2s;flex:0 0 auto}
+.ss .thumbs img.on,.ss .thumbs img:hover{opacity:1;outline:3px solid var(--orange)}
+</style></head><body>
+<header class="top"><div class="wrap">
+ <a class="brand" href="/" target="_top"><span class="b1">ASTRAX ZERO GRAVITY</span><span class="b2">ASTRAX無重力飛行サービス</span></a>
+ <div class="cta"><a href="/contact" target="_top">お問合せ</a></div>
+</div>
+<nav class="wrap menu"><a href="/" target="_top">ホーム</a><a href="/about" target="_top">無重力飛行とは</a><a href="/blank-1" target="_top">無重力の使い方</a><a href="/無重力の効果" target="_top">体験の効果</a><a href="/conditions" target="_top">参加条件</a><a href="/flow" target="_top">流れ</a><a href="/schedule" target="_top">当日</a><a href="/cost" target="_top">料金</a><a href="/voice" target="_top">体験者の声</a><a href="/gallery" target="_top">ギャラリー</a><a href="/contact" target="_top">お問合せ</a></nav></header>
+<div class="hero"><div class="wrap"><p class="eyebrow">Zero Gravity Flight Experience in Japan</p><h1>無重力関連論文</h1></div></div>
+<main class="wrap">
+<section class="sec"><h2>無重力飛行関連国際論文・発表一覧</h2>
+<div class="btns"><a class="btn" href="https://astrax-zerog.space/%E7%84%A1%E9%87%8D%E5%8A%9B%E9%96%A2%E9%80%A3%E8%AB%96%E6%96%87#iac20b3213" target="_blank" rel="noopener">論文</a><a class="btn" href="https://youtu.be/B5SyJ2XouwQ" target="_blank" rel="noopener">動画</a><a class="btn" href="https://astrax-zerog.space/%E7%84%A1%E9%87%8D%E5%8A%9B%E9%96%A2%E9%80%A3%E8%AB%96%E6%96%87#iac22e1918" target="_blank" rel="noopener">論文</a><a class="btn" href="https://youtu.be/0D2Agsnltb0" target="_blank" rel="noopener">動画</a><a class="btn" href="https://astrax-zerog.space/%E7%84%A1%E9%87%8D%E5%8A%9B%E9%96%A2%E9%80%A3%E8%AB%96%E6%96%87#iac22a2ipb1" target="_blank" rel="noopener">論文</a><a class="btn" href="https://youtu.be/Da7_C24NIsA" target="_blank" rel="noopener">動画</a><a class="btn" href="https://astrax-zerog.space/%E7%84%A1%E9%87%8D%E5%8A%9B%E9%96%A2%E9%80%A3%E8%AB%96%E6%96%87#iac23b3ip1" target="_blank" rel="noopener">論文</a><a class="btn" href="https://astrax-zerog.space/%E7%84%A1%E9%87%8D%E5%8A%9B%E9%96%A2%E9%80%A3%E8%AB%96%E6%96%87#iac23a259" target="_blank" rel="noopener">論文</a><a class="btn" href="https://youtu.be/Imc_9vXoOmk" target="_blank" rel="noopener">動画</a></div>
+</section>
+<section class="sec"><h2>無重力飛行関連国際論文</h2>
+<div class="ss" id="ss"><div class="stage"><img id="ssBig" src="https://static.wixstatic.com/media/36dff5_c31f5f4ca24540bcaa2101acd554671a~mv2.jpg" alt=""><button class="sp">&#8249;</button><button class="sn">&#8250;</button></div><div class="thumbs"><img loading="lazy" src="https://static.wixstatic.com/media/36dff5_c31f5f4ca24540bcaa2101acd554671a~mv2.jpg" data-k="0" alt=""><img loading="lazy" src="https://static.wixstatic.com/media/36dff5_bd54d5c5463d4328adabb1070cb1ee2c~mv2.jpg" data-k="1" alt=""><img loading="lazy" src="https://static.wixstatic.com/media/36dff5_87a7bcd01083467ba144075844556ac0~mv2.jpg" data-k="2" alt=""><img loading="lazy" src="https://static.wixstatic.com/media/36dff5_16c54fe6ba4c4732bb6e42d209baaeb3~mv2.jpg" data-k="3" alt=""><img loading="lazy" src="https://static.wixstatic.com/media/36dff5_3c15f51cb28c4febaaa059c61274fa38~mv2.jpg" data-k="4" alt=""><img loading="lazy" src="https://static.wixstatic.com/media/36dff5_7c47eda7289c477a84c7cfbc49798d15~mv2.jpg" data-k="5" alt=""><img loading="lazy" src="https://static.wixstatic.com/media/36dff5_586ec0ec552e4e36ab48eab0ce4c5ea2~mv2.jpg" data-k="6" alt=""><img loading="lazy" src="https://static.wixstatic.com/media/36dff5_602d83c71ab348ab885580c00229483d~mv2.jpg" data-k="7" alt=""><img loading="lazy" src="https://static.wixstatic.com/media/36dff5_12c482906a93425983c361060f0ea77e~mv2.jpg" data-k="8" alt=""><img loading="lazy" src="https://static.wixstatic.com/media/36dff5_bf2f1949ec7444dd9f8a871ecb4d3e2a~mv2.jpg" data-k="9" alt=""><img loading="lazy" src="https://static.wixstatic.com/media/36dff5_0941960bae0e4b6cbd7bd3528de19925~mv2.jpg" data-k="10" alt=""><img loading="lazy" src="https://static.wixstatic.com/media/36dff5_af7ca014ffde453e98bb9b71dc8e613d~mv2.jpg" data-k="11" alt=""><img loading="lazy" src="https://static.wixstatic.com/media/36dff5_7cc43d3e67af41ab9c35bc59577ccffb~mv2.jpg" data-k="12" alt=""><img loading="lazy" src="https://static.wixstatic.com/media/36dff5_ca509651076042d7beaa783e8acfecc5~mv2.jpg" data-k="13" alt=""><img loading="lazy" src="https://static.wixstatic.com/media/36dff5_5c6bb7a969a74dbfbc9c22c7582415d6~mv2.jpg" data-k="14" alt=""><img loading="lazy" src="https://static.wixstatic.com/media/36dff5_9f62df5e8519423697852afdda4386f6~mv2.jpg" data-k="15" alt=""><img loading="lazy" src="https://static.wixstatic.com/media/36dff5_93478d3fda06468180f4be4466cd9a36~mv2.jpg" data-k="16" alt=""><img loading="lazy" src="https://static.wixstatic.com/media/36dff5_2a8801f93eba4acfaea0ed30c849722c~mv2.jpg" data-k="17" alt=""><img loading="lazy" src="https://static.wixstatic.com/media/36dff5_1cccdbee69ea44af814fcab0450ed2eb~mv2.jpg" data-k="18" alt=""><img loading="lazy" src="https://static.wixstatic.com/media/36dff5_ded365ca2fc54293b59b7bea43c79b5c~mv2.jpg" data-k="19" alt=""><img loading="lazy" src="https://static.wixstatic.com/media/36dff5_7effca6c944f4c96b0c99cead0ccee0a~mv2.jpg" data-k="20" alt=""><img loading="lazy" src="https://static.wixstatic.com/media/36dff5_c6418594f93d4821a6145b3115ab3d29~mv2.jpg" data-k="21" alt=""><img loading="lazy" src="https://static.wixstatic.com/media/36dff5_805ef3c20cae4a069bda96c527261640~mv2.jpg" data-k="22" alt=""><img loading="lazy" src="https://static.wixstatic.com/media/36dff5_f97c0f15463d4a6a822bfc4d011f481c~mv2.jpg" data-k="23" alt=""><img loading="lazy" src="https://static.wixstatic.com/media/36dff5_8387162b73fb4f4e87dd746a1a090b74~mv2.jpg" data-k="24" alt=""><img loading="lazy" src="https://static.wixstatic.com/media/36dff5_69bab5fe6cfa401b8560de567494659d~mv2.jpg" data-k="25" alt=""><img loading="lazy" src="https://static.wixstatic.com/media/36dff5_29136eb749ab4e42917255b55f237646~mv2.jpg" data-k="26" alt=""><img loading="lazy" src="https://static.wixstatic.com/media/36dff5_1044da9c28fd49c9bd3fa28b4309d474~mv2.jpg" data-k="27" alt=""><img loading="lazy" src="https://static.wixstatic.com/media/36dff5_562d25ee29444d0f99ceef56701cad58~mv2.jpg" data-k="28" alt=""><img loading="lazy" src="https://static.wixstatic.com/media/36dff5_716257cfb4d840e6ae4aad156792f4fc~mv2.jpg" data-k="29" alt=""><img loading="lazy" src="https://static.wixstatic.com/media/36dff5_1d3f99401b0f477bbfc5f8acfdcad9c6~mv2.jpg" data-k="30" alt=""><img loading="lazy" src="https://static.wixstatic.com/media/36dff5_31d98466a124464fb638c7acb5971b19~mv2.jpg" data-k="31" alt=""><img loading="lazy" src="https://static.wixstatic.com/media/36dff5_18d623a367c049d5b6181a2c920fd611~mv2.jpg" data-k="32" alt=""><img loading="lazy" src="https://static.wixstatic.com/media/36dff5_565758c1ae114a1692a12b18b22d1219~mv2.jpg" data-k="33" alt=""><img loading="lazy" src="https://static.wixstatic.com/media/36dff5_bb578b8640954a63a9bea84d32e85157~mv2.jpg" data-k="34" alt=""><img loading="lazy" src="https://static.wixstatic.com/media/36dff5_41869f6f9daa4ccc8586bf8d8b46c08c~mv2.jpg" data-k="35" alt=""><img loading="lazy" src="https://static.wixstatic.com/media/36dff5_af5db7efbfb8455492376ec0d3ec8bea~mv2.jpg" data-k="36" alt=""><img loading="lazy" src="https://static.wixstatic.com/media/36dff5_6431c70456194aa99e9fbaf3e0456d74~mv2.jpg" data-k="37" alt=""><img loading="lazy" src="https://static.wixstatic.com/media/36dff5_687d2c3a655a4865a2600a60dbf3f72e~mv2.jpg" data-k="38" alt=""></div></div>
+</section>
+</main>
+<footer><div class="wrap"><div class="fb">ASTRAX</div>
+<p>E-mail: <a href="mailto:astrax_zero.g@iss-japan.com">astrax_zero.g@iss-japan.com</a><br>Web: <a href="https://astrax.space">https://astrax.space</a><br>FB Page: <a href="https://www.facebook.com/ZERO.G.Challenger/">https://www.facebook.com/ZERO.G.Challenger/</a></p>
+<p class="cp">株式会社ASTRAX／有限会社国際宇宙サービス　© 2026 ASTRAX All rights reserved.</p></div></footer>
+<div id="lb"><button class="x">×</button><button class="p">‹</button><img alt=""><button class="n">›</button></div>
+<script>(function(){var im=[].slice.call(document.querySelectorAll('.grid img,figure.one img')),lb=document.getElementById('lb'),v=lb.querySelector('img'),i=0;function s(k){i=(k+im.length)%im.length;v.src=im[i].src;lb.classList.add('on')}im.forEach(function(e,k){e.addEventListener('click',function(){s(k)})});lb.querySelector('.x').onclick=function(){lb.classList.remove('on')};lb.querySelector('.p').onclick=function(){s(i-1)};lb.querySelector('.n').onclick=function(){s(i+1)};document.addEventListener('keydown',function(e){if(!lb.classList.contains('on'))return;if(e.key==='Escape')lb.classList.remove('on');if(e.key==='ArrowLeft')s(i-1);if(e.key==='ArrowRight')s(i+1)})})();</script>
+<script>(function(){var ss=document.getElementById('ss');if(!ss)return;var big=document.getElementById('ssBig'),th=[].slice.call(ss.querySelectorAll('.thumbs img')),i=0,tm;function go(k){i=(k+th.length)%th.length;big.src=th[i].src;th.forEach(function(e,j){e.classList.toggle('on',j===i)});var bx=th[i].parentNode;bx.scrollLeft=th[i].offsetLeft-bx.clientWidth/2+th[i].clientWidth/2}th.forEach(function(e,k){e.addEventListener('click',function(){go(k);rs()})});ss.querySelector('.sp').onclick=function(){go(i-1);rs()};ss.querySelector('.sn').onclick=function(){go(i+1);rs()};function rs(){clearInterval(tm);tm=setInterval(function(){go(i+1)},4500)}go(0);rs()})();</script>
+</body></html>

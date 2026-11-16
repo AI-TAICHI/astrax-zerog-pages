@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>料金 | ASTRAX無重力飛行サービス（デザイン案）</title>
+<style>:root{--navy:#0b1f4b;--navy2:#13306e;--orange:#e8590c;--ink:#1b2236;--mute:#5b6478;--line:#e3e8f2;--bg:#f5f7fc;--w:980px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;color:var(--ink);background:#fff;line-height:1.85;font-size:16px;-webkit-font-smoothing:antialiased}
+a{color:var(--navy2);text-decoration:none}a:hover{color:var(--orange)}
+.wrap{max-width:var(--w);margin:0 auto;padding:0 20px}
+/* ヘッダー */
+header.top{position:sticky;top:0;z-index:50;background:rgba(11,31,75,.97);backdrop-filter:blur(6px);box-shadow:0 2px 14px rgba(0,0,0,.18)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:10px;padding-bottom:6px}
+.brand{display:flex;flex-direction:column;line-height:1.2;color:#fff}
+.brand .b1{font-size:12px;letter-spacing:.32em;color:#ff8a4c;font-weight:700}
+.brand .b2{font-size:19px;font-weight:800;letter-spacing:.04em}
+.cta a{display:inline-block;background:var(--orange);color:#fff;padding:9px 20px;border-radius:999px;font-weight:700;font-size:14px}
+.cta a:hover{background:#ff7a2f;color:#fff}
+nav.menu{display:flex;gap:2px;overflow-x:auto;padding-bottom:8px;scrollbar-width:none}
+nav.menu a{color:#c9d4ef;padding:7px 12px;font-size:13px;white-space:nowrap;border-radius:6px}
+nav.menu a:hover{color:#fff;background:rgba(255,255,255,.1)}
+nav.menu a.on{color:#fff;background:var(--orange)}
+/* ヒーロー */
+.hero{background:radial-gradient(1200px 400px at 80% -10%,#274a99 0,transparent 60%),linear-gradient(160deg,#0b1f4b 0%,#102a63 60%,#173a82 100%);color:#fff;padding:64px 0 56px;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;inset:auto -10% -60px -10%;height:120px;background:#fff;border-radius:50% 50% 0 0/100% 100% 0 0}
+.hero .eyebrow{margin:0 0 10px;font-size:12px;letter-spacing:.35em;color:#ff9a63;text-transform:uppercase}
+.hero h1{margin:0;font-size:clamp(28px,5vw,46px);line-height:1.25;font-weight:800;letter-spacing:.02em}
+/* 本文 */
+main.wrap{padding-top:24px;padding-bottom:70px}
+.sec{margin:0 0 44px}
+.sec h2{font-size:24px;margin:0 0 18px;padding-left:14px;border-left:6px solid var(--orange);color:var(--navy);line-height:1.35}
+.sec p{margin:0 0 14px}.sec p.small{font-size:13px;color:var(--mute)}
+.sec ul{margin:0 0 14px;padding-left:22px}.sec li{margin:4px 0}
+.sec b{color:var(--navy)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px;margin:12px 0 18px}
+.grid figure{margin:0;border-radius:10px;overflow:hidden;background:var(--bg);aspect-ratio:4/3;cursor:zoom-in;box-shadow:0 1px 4px rgba(11,31,75,.12);transition:transform .2s,box-shadow .2s}
+.grid figure:hover{transform:translateY(-3px);box-shadow:0 8px 18px rgba(11,31,75,.25)}
+.grid img{width:100%;height:100%;object-fit:cover;display:block}
+figure.one{margin:14px 0}figure.one img{max-width:100%;border-radius:12px;box-shadow:0 4px 18px rgba(11,31,75,.18)}
+.videos{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;margin:14px 0}
+.vid{position:relative;padding-top:56.25%;border-radius:12px;overflow:hidden;box-shadow:0 4px 18px rgba(11,31,75,.2);background:#000}
+.vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0}
+.btn{display:inline-block;background:var(--navy);color:#fff;padding:11px 22px;border-radius:8px;font-weight:700;font-size:14px;transition:.2s}
+.btn:hover{background:var(--orange);color:#fff;transform:translateY(-2px)}
+.btn.alt{background:#fff;color:var(--navy);border:2px solid var(--navy)}
+/* ライトボックス */
+#lb{position:fixed;inset:0;background:rgba(5,12,32,.93);display:none;align-items:center;justify-content:center;z-index:100}
+#lb.on{display:flex}#lb img{max-width:92vw;max-height:86vh;border-radius:8px}
+#lb button{position:absolute;background:rgba(255,255,255,.14);color:#fff;border:0;font-size:30px;width:52px;height:52px;border-radius:50%;cursor:pointer}
+#lb .x{top:18px;right:18px}#lb .p{left:18px;top:50%}#lb .n{right:18px;top:50%}
+/* フッター */
+footer{background:var(--navy);color:#c9d4ef;padding:40px 0;text-align:center;font-size:14px}
+footer a{color:#fff}footer .fb{font-size:22px;font-weight:800;letter-spacing:.3em;color:#fff;margin-bottom:10px}footer .cp{font-size:12px;opacity:.7}
+@media(max-width:640px){.brand .b2{font-size:16px}.cta a{padding:7px 14px;font-size:12px}.hero{padding:44px 0 46px}.sec h2{font-size:20px}}
+
+.ss{margin:6px 0 30px}.ss .stage{position:relative;border-radius:16px;overflow:hidden;background:#0b1f4b;aspect-ratio:16/9;box-shadow:0 10px 30px rgba(11,31,75,.3)}
+.ss .stage img{width:100%;height:100%;object-fit:contain;display:block}
+.ss .stage button{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;border:0;background:rgba(255,255,255,.85);color:var(--navy);font-size:28px;cursor:pointer}
+.ss .sp{left:12px}.ss .sn{right:12px}
+.ss .thumbs{display:flex;gap:8px;overflow-x:auto;padding:10px 2px 4px;scrollbar-width:thin}
+.ss .thumbs img{height:64px;width:auto;border-radius:8px;opacity:.55;cursor:pointer;transition:.2s;flex:0 0 auto}
+.ss .thumbs img.on,.ss .thumbs img:hover{opacity:1;outline:3px solid var(--orange)}
+</style></head><body>
+<header class="top"><div class="wrap">
+ <a class="brand" href="/" target="_top"><span class="b1">ASTRAX ZERO GRAVITY</span><span class="b2">ASTRAX無重力飛行サービス</span></a>
+ <div class="cta"><a href="/contact" target="_top">お問合せ</a></div>
+</div>
+<nav class="wrap menu"><a href="/" target="_top">ホーム</a><a href="/about" target="_top">無重力飛行とは</a><a href="/blank-1" target="_top">無重力の使い方</a><a href="/無重力の効果" target="_top">体験の効果</a><a href="/conditions" target="_top">参加条件</a><a href="/flow" target="_top">流れ</a><a href="/schedule" target="_top">当日</a><a href="/cost" target="_top" class="on">料金</a><a href="/voice" target="_top">体験者の声</a><a href="/gallery" target="_top">ギャラリー</a><a href="/contact" target="_top">お問合せ</a></nav></header>
+<div class="hero"><div class="wrap"><p class="eyebrow">Zero Gravity Flight Experience in Japan</p><h1>料金</h1></div></div>
+<main class="wrap">
+<section class="sec"><h2>無重力を体験するのにかかる費用</h2>
+<p>宇宙旅行で無重力体験をする場合、乗る宇宙船や滞在時間などによって値段は様々ですが、大まかに分けて、ちょっと宇宙に飛び出してまた地球に戻ってくる「体験型宇宙旅行」と、地球を何周もしながら滞在できる本格的な「宿泊型宇宙旅行」とに分けられます。</p>
+<p>「体験型宇宙旅行」は、与圧服を着用し、飛行機型のロケットに搭乗し、滑走路から離陸し、大気圏を超えて高度100kmの宇宙空間を数分間飛行するというものです。離陸地・着陸地は、アメリカのニューメキシコ州にあるスペースポートアメリカなど海外に行く必要があります。費用は３日間の訓練プログラムなどを含め、2000万円〜7000万円くらいします。</p>
+<div class="grid"><figure><img loading="lazy" src="https://static.wixstatic.com/media/36dff5_421e53a5917c4366ad422fcecb5aded2~mv2.jpg" alt="launch.jpg"></figure><figure><img loading="lazy" src="https://static.wixstatic.com/media/36dff5_2e08e72e9310386dd6d97ac268f69038.jpg" alt=""></figure><figure><img loading="lazy" src="https://static.wixstatic.com/media/36dff5_07c41390d02543b7ab4ef5c4b6a9c9ce~mv2.png" alt="Space-Perspective_FullAltitude.png"></figure></div>
+<p>一方、「宿泊型宇宙旅行」の方は、国際宇宙ステーションに1週間から10日間ほど滞在することができるロングステイコースです。ロシアの星の街（スターシティ）と呼ばれる軍事施設で約6か月間の訓練が必要となります。与圧服を着用し、ロケットの先端に付けられたカプセル型の宇宙船に乗り、まっすぐ上向きに打ち上げられ、高度約400kmの宇宙空間を飛行し続けます。打上げ場所はカザフスタンにあるバイコヌール宇宙基地などロシアが使  用している宇宙基地まで行く必要があります。費用は100億円以上。オプションとして、船外活動（宇宙遊泳）も数十億円で追加することができます。</p>
+<div class="grid"><figure><img loading="lazy" src="https://static.wixstatic.com/media/36dff5_c1e6eee24cda4b81b36997553b1817f4.jpg" alt=""></figure><figure><img loading="lazy" src="https://static.wixstatic.com/media/36dff5_06e18ee5152341c2a2d35c63729424a0.jpg" alt=""></figure><figure><img loading="lazy" src="https://static.wixstatic.com/media/36dff5_a1e76e63ade14020a9c2457ce244cdcd.jpg" alt=""></figure><figure><img loading="lazy" src="https://static.wixstatic.com/media/36dff5_5e11835df003437f99007a2007471116.jpg" alt=""></figure></div>
+<p>このように、今現在宇宙空間で無重力を体験しようとすると非常に高額な費用を払い、海外で過酷な訓練を行い、厳しい環境の中で打ち上げられなければなりません。</p>
+<p>しかし、ジェット機を利用した無重力飛行では、1回20秒から30秒くらいの無重力状態を7回から8回ほど体験できます。離陸地・着陸地は、日本の愛知県にある名古屋空港。朝7:50にJR名古屋駅に集合し、午前中にレクチャーを受け、昼過ぎには無重力飛行を行い、戻ってきて無重力飛行認定証を授与され、16:30には再びJR名古屋駅で解散となりますので、日帰りでの参加も可能です。費用はコースによって異なりますが、190万円（税別）から体験することができます。(2026年4月1日に料金改定）</p>
+<p>人生で１度は無重力体験をしてみませんか？きっと、一生で一番心に残る思い出の一つになることでしょう。</p>
+<div class="grid"><figure><img loading="lazy" src="https://static.wixstatic.com/media/36dff5_b7c000634ca64461ac5bae13c990a560.jpg" alt=""></figure><figure><img loading="lazy" src="https://static.wixstatic.com/media/36dff5_2d38bc7a1b8d4d5e89380ec00bbf1a29.jpg" alt=""></figure><figure><img loading="lazy" src="https://static.wixstatic.com/media/d03fa8_e08a8205c4af4085a9e9da4eebb5522d~mv2.jpg" alt="_ARX0624.JPG"></figure><figure><img loading="lazy" src="https://static.wixstatic.com/media/d03fa8_f1adef086f6c44ae87894efe08c95ff7~mv2.png" alt="スクリーンショット 2022-11-17 18.24.55.png"></figure><figure><img loading="lazy" src="https://static.wixstatic.com/media/d03fa8_63232f8ce42540ffa9286a67ef19ad41~mv2.jpg" alt="_ARX0687.JPG"></figure><figure><img loading="lazy" src="https://static.wixstatic.com/media/d03fa8_ca588d7f733d450b8651bc494569ee07~mv2.jpg" alt="スクリーンショット 2022-11-17 18_edited.jpg"></figure></div>
+<p>無重力飛行参加料金（３人で飛ぶ場合のお1人様の基本料金）</p>
+<p>基本料金</p>
+<p>1,900,000円〜（+税） /人</p>
+<p>無重力飛行機をチャーターする料金をお客様の人数(3人)で割った額になります。</p>
+<p>土日祝の休日は、20万円（+税）/人が追加でかかります。</p>
+<p class="small">上記の料金には、以下のものが含まれます。<br>集合場所（JR名古屋駅）から愛知県宮名古屋空港までの送迎（専用ジャンボタクシー）<br>無重力飛行士（添乗員）によるサポート<br>当日のオリエンテーション及び資料<br>安全教育講習（ビデオによる）<br>搭乗服レンタル（基本的にオレンジ色の特製ツナギ・他の色もお選びいただけます（青以外））<br>無重力飛行搭乗券を含む特製パッケージ（案内状、無重力飛行ガイドライン、地図など）<br>ASTRAX特製ワッペン、ZERO特製ワッペンフライト別特製デザインのワッペン、キーホルダー、ステッカー<br>無重力専用ジェット機による飛行<br>（約1時間半の飛行中に20秒から25秒の無重力体験が7回から8回（状況により変動します））<br>無重カカメラマンによる写真撮影（レクチャー中、無重力飛行前後、無重力飛行中、懇親会、無重力飛行認定証授与式）<br>皆日撮影した写真・動画のデータ（USBかSDカード）<br>当日撮影した映像によるプロモーション映像（編集後にダウンロードリンクをお知らせ）<br>無重力飛行認定ワッペン及び授与式（DASより）<br>愛知県営名古屋空港からJR名古屋駅までの帰路送迎（専用ジャンボタクシー）<br>無重力チャレンジャーZEROのFBグループへの参加資格<br>フライト別の無重力グループへの参加資格<br>ASTRAX宇宙倶楽部への参加資格（予定）<br>ASTRAX宇宙アプリの使用資格（予定）<br>保険<br>なお、以下のものは費用に含まれません（各自ご負担ください）<br>ご自宅からJR名古屋駅までの交通費<br>JR名古屋駅からご自宅までの交通費<br>宿泊費（前日入りされる方、日帰りされない方）<br>朝食・昼食・夕食（昼食は行きにコンビニエンスストアーに立ち寄ります）<br>無重力実験に必要なもの（道具、衣装など）<br>通訳やその他のサービス</p>
+<p>無重力飛行参加料金（２人で飛ぶ場合のお1人様の基本料金）</p>
+<p>基本料金</p>
+<p>2,850,000円～（+税） /人</p>
+<p>無重力飛行機をチャーターする料金をお客様の人数(2人)で割った額になります。</p>
+<p>土日祝の休日は30万円（+税）/人の追加料金がかかります。</p>
+<p class="small">上記の料金には、以下のものが含まれます。</p>
+<p>無重力飛行機貸切料金</p>
+<p>貸切料金</p>
+<p>5,700,000円～+税 /機（3人まで）</p>
+<p>無重力飛行機をチャーター（貸切）する料金です。</p>
+<p>1名～3名まで搭乗可能です。</p>
+<p>土日祝の休日は、60万円（＋税）/フライトの追加料金がかかります。</p>
+<p class="small">上記の料金には、以下のものが含まれます。<br>基本料金に含まれるもの全て<br>貸切に必要となる全ての手続き<br>事前の無重力説明会（ご都合がつく場合のみ。東京近郊に限ります）<br> <br>なお、貸切の場合は代表者を決めていただき、その方とのやりとりとさせていただきます（代表者は他の参加者とのやりとりをお願い致します）</p>
+<p>無重力飛行特別料金</p>
+<p>特別フライト</p>
+<p>2,850,000円～（+税） /人</p>
+<p>お客様2名とゲスト1名で飛ぶ場合のお客様1名の金額です。</p>
+<p>土日祝の休日は30万円（+税）/人が追加でかかります。</p>
+<p class="small">基本料金に含まれるもの全て</p>
+</section>
+</main>
+<footer><div class="wrap"><div class="fb">ASTRAX</div>
+<p>E-mail: <a href="mailto:astrax_zero.g@iss-japan.com">astrax_zero.g@iss-japan.com</a><br>Web: <a href="https://astrax.space">https://astrax.space</a><br>FB Page: <a href="https://www.facebook.com/ZERO.G.Challenger/">https://www.facebook.com/ZERO.G.Challenger/</a></p>
+<p class="cp">株式会社ASTRAX／有限会社国際宇宙サービス　© 2026 ASTRAX All rights reserved.</p></div></footer>
+<div id="lb"><button class="x">×</button><button class="p">‹</button><img alt=""><button class="n">›</button></div>
+<script>(function(){var im=[].slice.call(document.querySelectorAll('.grid img,figure.one img')),lb=document.getElementById('lb'),v=lb.querySelector('img'),i=0;function s(k){i=(k+im.length)%im.length;v.src=im[i].src;lb.classList.add('on')}im.forEach(function(e,k){e.addEventListener('click',function(){s(k)})});lb.querySelector('.x').onclick=function(){lb.classList.remove('on')};lb.querySelector('.p').onclick=function(){s(i-1)};lb.querySelector('.n').onclick=function(){s(i+1)};document.addEventListener('keydown',function(e){if(!lb.classList.contains('on'))return;if(e.key==='Escape')lb.classList.remove('on');if(e.key==='ArrowLeft')s(i-1);if(e.key==='ArrowRight')s(i+1)})})();</script>
+<script>(function(){var ss=document.getElementById('ss');if(!ss)return;var big=document.getElementById('ssBig'),th=[].slice.call(ss.querySelectorAll('.thumbs img')),i=0,tm;function go(k){i=(k+th.length)%th.length;big.src=th[i].src;th.forEach(function(e,j){e.classList.toggle('on',j===i)});var bx=th[i].parentNode;bx.scrollLeft=th[i].offsetLeft-bx.clientWidth/2+th[i].clientWidth/2}th.forEach(function(e,k){e.addEventListener('click',function(){go(k);rs()})});ss.querySelector('.sp').onclick=function(){go(i-1);rs()};ss.querySelector('.sn').onclick=function(){go(i+1);rs()};function rs(){clearInterval(tm);tm=setInterval(function(){go(i+1)},4500)}go(0);rs()})();</script>
+</body></html>
