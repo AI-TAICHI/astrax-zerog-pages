@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="ja"><head><meta name="robots" content="noindex,follow"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ギャラリー | ASTRAX無重力飛行サービス（デザイン案）</title>
+<style>html{background:#0b1f4b}:root{--navy:#0b1f4b;--navy2:#13306e;--orange:#e8590c;--ink:#1b2236;--mute:#5b6478;--line:#e3e8f2;--bg:#f5f7fc;--w:980px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;color:var(--ink);background:#fff;line-height:1.85;font-size:16px;-webkit-font-smoothing:antialiased}
+a{color:var(--navy2);text-decoration:none}a:hover{color:var(--orange)}
+.wrap{max-width:var(--w);margin:0 auto;padding:0 20px}
+/* ヘッダー */
+header.top{position:sticky;top:0;z-index:50;background:rgba(11,31,75,.97);backdrop-filter:blur(6px);box-shadow:0 2px 14px rgba(0,0,0,.18)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:10px;padding-bottom:6px}
+.brand{display:flex;flex-direction:column;line-height:1.2;color:#fff}
+.brand .b1{font-size:12px;letter-spacing:.32em;color:#ff8a4c;font-weight:700}
+.brand .b2{font-size:19px;font-weight:800;letter-spacing:.04em}
+.cta a{display:inline-block;background:var(--orange);color:#fff;padding:9px 20px;border-radius:999px;font-weight:700;font-size:14px}
+.cta a:hover{background:#ff7a2f;color:#fff}
+nav.menu{display:flex;gap:2px;overflow-x:auto;padding-bottom:8px;scrollbar-width:none}
+nav.menu a{color:#c9d4ef;padding:7px 12px;font-size:13px;white-space:nowrap;border-radius:6px}
+nav.menu a:hover{color:#fff;background:rgba(255,255,255,.1)}
+nav.menu a.on{color:#fff;background:var(--orange)}
+/* ヒーロー */
+.hero{background:radial-gradient(1200px 400px at 80% -10%,#274a99 0,transparent 60%),linear-gradient(160deg,#0b1f4b 0%,#102a63 60%,#173a82 100%);color:#fff;padding:64px 0 56px;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;inset:auto -10% -60px -10%;height:120px;background:#fff;border-radius:50% 50% 0 0/100% 100% 0 0}
+.hero .eyebrow{margin:0 0 10px;font-size:12px;letter-spacing:.35em;color:#ff9a63;text-transform:uppercase}
+.hero h1{margin:0;font-size:clamp(28px,5vw,46px);line-height:1.25;font-weight:800;letter-spacing:.02em}
+/* 本文 */
+main.wrap{padding-top:24px;padding-bottom:70px}
+.sec{margin:0 0 44px}
+.sec h2{font-size:24px;margin:0 0 18px;padding-left:14px;border-left:6px solid var(--orange);color:var(--navy);line-height:1.35}
+.sec p{margin:0 0 14px}.sec p.small{font-size:13px;color:var(--mute)}
+.sec ul{margin:0 0 14px;padding-left:22px}.sec li{margin:4px 0}
+.sec b{color:var(--navy)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px;margin:12px 0 18px}
+.grid figure{margin:0;border-radius:10px;overflow:hidden;background:var(--bg);aspect-ratio:4/3;cursor:zoom-in;box-shadow:0 1px 4px rgba(11,31,75,.12);transition:transform .2s,box-shadow .2s}
+.grid figure:hover{transform:translateY(-3px);box-shadow:0 8px 18px rgba(11,31,75,.25)}
+.grid img{width:100%;height:100%;object-fit:cover;display:block}
+figure.one{margin:14px 0}figure.one img{max-width:100%;border-radius:12px;box-shadow:0 4px 18px rgba(11,31,75,.18)}
+.videos{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;margin:14px 0}
+.vid{position:relative;padding-top:56.25%;border-radius:12px;overflow:hidden;box-shadow:0 4px 18px rgba(11,31,75,.2);background:#000}
+.vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0}
+.btn{display:inline-block;background:var(--navy);color:#fff;padding:11px 22px;border-radius:8px;font-weight:700;font-size:14px;transition:.2s}
+.btn:hover{background:var(--orange);color:#fff;transform:translateY(-2px)}
+.btn.alt{background:#fff;color:var(--navy);border:2px solid var(--navy)}
+/* ライトボックス */
+#lb{position:fixed;inset:0;background:rgba(5,12,32,.93);display:none;align-items:center;justify-content:center;z-index:100}
+#lb.on{display:flex}#lb img{max-width:92vw;max-height:86vh;border-radius:8px}
+#lb button{position:absolute;background:rgba(255,255,255,.14);color:#fff;border:0;font-size:30px;width:52px;height:52px;border-radius:50%;cursor:pointer}
+#lb .x{top:18px;right:18px}#lb .p{left:18px;top:50%}#lb .n{right:18px;top:50%}
+/* フッター */
+footer{background:var(--navy);color:#c9d4ef;padding:40px 0;text-align:center;font-size:14px}
+footer a{color:#fff}footer .fb{font-size:22px;font-weight:800;letter-spacing:.3em;color:#fff;margin-bottom:10px}footer .cp{font-size:12px;opacity:.7}
+@media(max-width:640px){.brand .b2{font-size:16px}.cta a{padding:7px 14px;font-size:12px}.hero{padding:44px 0 46px}.sec h2{font-size:20px}}
+
+.ss{margin:6px 0 30px}.ss .stage{position:relative;border-radius:16px;overflow:hidden;background:#0b1f4b;aspect-ratio:16/9;box-shadow:0 10px 30px rgba(11,31,75,.3)}
+.ss .stage img{width:100%;height:100%;object-fit:contain;display:block}
+.ss .stage button{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;border:0;background:rgba(255,255,255,.85);color:var(--navy);font-size:28px;cursor:pointer}
+.ss .sp{left:12px}.ss .sn{right:12px}
+.ss .thumbs{display:flex;gap:8px;overflow-x:auto;padding:10px 2px 4px;scrollbar-width:thin}
+.ss .thumbs img{height:64px;width:auto;border-radius:8px;opacity:.55;cursor:pointer;transition:.2s;flex:0 0 auto}
+.ss .thumbs img.on,.ss .thumbs img:hover{opacity:1;outline:3px solid var(--orange)}
+/*tight*/
+body{font-size:15px;line-height:1.7}
+.sec{margin:0 0 32px}
+.sec h2{font-size:22px;margin:0 0 12px}
+.sec p{margin:0 0 9px}.sec li{margin:2px 0}.sec ul{margin:0 0 10px}
+.sec p.small{font-size:13px}
+.nt p{line-height:1.7;margin:0 0 8px}
+.note{margin:0 0 24px}.nh{font-size:22px;margin:0 0 10px}
+.sched .sec p,.sched .sec p.small{font-size:14px;margin:0 0 4px}
+.sched .sec h2{font-size:20px}
+.fl .fl-b{padding:14px 18px 16px}
+.sched .fl .lead{font-size:14px}
+.fl dl.spec dt{padding:6px 12px;font-size:12.5px}
+.fl dl.spec dd{padding:6px 12px;font-size:13.5px;line-height:1.6}
+.fl ul.fl-list li{padding:4px 0 4px 20px;font-size:13px;line-height:1.55}
+.fl ul.fl-list li:before{top:11px}
+.fl .sub{margin:14px 0 6px}
+.fl .fnote{font-size:13px;line-height:1.6;padding:8px 12px}
+.fl .pc .pd{font-size:12px;line-height:1.55}
+.card span{font-size:12.5px}
+main.wrap{padding-bottom:50px}
+</style><style>
+.sec h3{font-size:17px;margin:26px 0 10px;color:var(--navy);padding-left:10px;border-left:4px solid var(--orange);line-height:1.4}
+.lead{color:var(--mute);font-size:14px;margin:0 0 14px}
+.vitem{min-width:0}.vcap{margin:8px 2px 0;font-size:13px;line-height:1.5;color:var(--ink)}.vcap small{display:block;color:var(--mute);font-size:11.5px;margin-top:2px}
+.note2{background:var(--bg);border-radius:10px;padding:10px 14px;font-size:12.5px;color:var(--mute);line-height:1.6;margin:10px 0 0}
+.toc{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 26px}.toc a{background:#fff;border:2px solid var(--navy);color:var(--navy);padding:7px 16px;border-radius:999px;font-size:13.5px;font-weight:700}.toc a:hover{background:var(--navy);color:#fff}
+.grid{grid-template-columns:repeat(auto-fill,minmax(180px,1fr))}
+.grid figure{aspect-ratio:3/2}
+</style></head><body>
+
+<main class="wrap" style="padding-top:6px">
+<section class="sec" id="astrax"><h2>ASTRAXの無重力飛行の動画</h2><h3>PV・フライト報告・体験者の声</h3><div class="videos"><div class="vitem"><div class="vid"><iframe loading="lazy" title="無重力チャレンジャーZERO PV (2012-2014)" src="https://www.youtube.com/embed/HK02Z8dQ4ko" allowfullscreen></iframe></div><p class="vcap">無重力チャレンジャーZERO PV (2012-2014)<small>出典：YouTube「旧ASTRAXチャンネル」</small></p></div><div class="vitem"><div class="vid"><iframe loading="lazy" title="ZERO20141103　北原照久さんフライトPV" src="https://www.youtube.com/embed/_-pRzb1-15o" allowfullscreen></iframe></div><p class="vcap">ZERO20141103　北原照久さんフライトPV<small>出典：YouTube「旧ASTRAXチャンネル」</small></p></div><div class="vitem"><div class="vid"><iframe loading="lazy" title="テレビ神奈川「ありがとっ！」北原照久さん無重力２回目の報告" src="https://www.youtube.com/embed/vzi56h_i3CA" allowfullscreen></iframe></div><p class="vcap">テレビ神奈川「ありがとっ！」北原照久さん無重力２回目の報告<small>出典：YouTube「旧ASTRAXチャンネル」</small></p></div><div class="vitem"><div class="vid"><iframe loading="lazy" title="2012年5月13日の無重力飛行の後の参加者の皆さんの感想" src="https://www.youtube.com/embed/6jBfS14s9wM" allowfullscreen></iframe></div><p class="vcap">2012年5月13日の無重力飛行の後の参加者の皆さんの感想<small>出典：YouTube「旧ASTRAXチャンネル」</small></p></div></div><h3>無重力でのチャレンジ企画</h3><div class="videos"><div class="vitem"><div class="vid"><iframe loading="lazy" title="無重力プロポーズ　アルマゲドン風　無重力体験 無重力チャレンジャー　くさまひろゆき" src="https://www.youtube.com/embed/M42Blr6Eml0" allowfullscreen></iframe></div><p class="vcap">無重力プロポーズ　アルマゲドン風　無重力体験 無重力チャレンジャー　くさまひろゆき<small>出典：YouTube「旧ASTRAXチャンネル」</small></p></div><div class="vitem"><div class="vid"><iframe loading="lazy" title="無重力プロポーズくさまさん 無重力体験 無重力チャレンジャー ZERO Gravity" src="https://www.youtube.com/embed/DsieAIyQqK0" allowfullscreen></iframe></div><p class="vcap">無重力プロポーズくさまさん 無重力体験 無重力チャレンジャー ZERO Gravity<small>出典：YouTube「旧ASTRAXチャンネル」</small></p></div><div class="vitem"><div class="vid"><iframe loading="lazy" title="魔女の宅急便 無重力体験 無重力チャレンジャー ZERO" src="https://www.youtube.com/embed/w4K8fJFmWrE" allowfullscreen></iframe></div><p class="vcap">魔女の宅急便 無重力体験 無重力チャレンジャー ZERO<small>出典：YouTube「旧ASTRAXチャンネル」</small></p></div><div class="vitem"><div class="vid"><iframe loading="lazy" title="Shall we Zero G dance? 世界初！無重力社交ダンス 小林曜子さん 無重力チャレンジャーZERO" src="https://www.youtube.com/embed/iJpUFPTGwsU" allowfullscreen></iframe></div><p class="vcap">Shall we Zero G dance? 世界初！無重力社交ダンス 小林曜子さん 無重力チャレンジャーZERO<small>出典：YouTube「旧ASTRAXチャンネル」</small></p></div><div class="vitem"><div class="vid"><iframe loading="lazy" title="月の重力を楽しむ貞子　無重力チャレンジャーZERO 20141129 無重力体験 Gravity8" src="https://www.youtube.com/embed/qLuZGshpN50" allowfullscreen></iframe></div><p class="vcap">月の重力を楽しむ貞子　無重力チャレンジャーZERO 20141129 無重力体験 Gravity8<small>出典：YouTube「ASTRAX STUDIO」</small></p></div><div class="vitem"><div class="vid"><iframe loading="lazy" title="宇宙トラベラー根本はるみのZERO G体験スペシャル（with山崎大地）" src="https://www.youtube.com/embed/gzG4iJx_9Us" allowfullscreen></iframe></div><p class="vcap">宇宙トラベラー根本はるみのZERO G体験スペシャル（with山崎大地）<small>出典：YouTube「旧ASTRAXチャンネル」</small></p></div></div><h3>体験者・関係者による紹介動画</h3><div class="videos"><div class="vitem"><div class="vid"><iframe loading="lazy" title="ゼロ・クラビティの無重力体験でプロポーズ！" src="https://www.youtube.com/embed/MDewjnPy0mE" allowfullscreen></iframe></div><p class="vcap">ゼロ・クラビティの無重力体験でプロポーズ！<small>出典：YouTube「medikatsu」</small></p></div><div class="vitem"><div class="vid"><iframe loading="lazy" title="一緒に無重力体験しませんか？【2014年11月29日】ヴィゴラス無重力フライト決定！Let&#x27;s experience the zero gravity!" src="https://www.youtube.com/embed/FE5NJGKvmco" allowfullscreen></iframe></div><p class="vcap">一緒に無重力体験しませんか？【2014年11月29日】ヴィゴラス無重力フライト決定！Let&#x27;s experience the zero gravity!<small>出典：YouTube「ハピエク」</small></p></div><div class="vitem"><div class="vid"><iframe loading="lazy" title="ヴィゴラス無重力フライト報告１" src="https://www.youtube.com/embed/OF4_CgqzYwU" allowfullscreen></iframe></div><p class="vcap">ヴィゴラス無重力フライト報告１<small>出典：YouTube「ハピエク」</small></p></div><div class="vitem"><div class="vid"><iframe loading="lazy" title="金光サリィさんとtsuや無重力体験の話しで盛り上がり！" src="https://www.youtube.com/embed/HG6ChEvYzZY" allowfullscreen></iframe></div><p class="vcap">金光サリィさんとtsuや無重力体験の話しで盛り上がり！<small>出典：YouTube「medikatsu」</small></p></div><div class="vitem"><div class="vid"><iframe loading="lazy" title="北原照久氏が山崎大地氏との「宇宙旅行」「無重力ツアー」を語る" src="https://www.youtube.com/embed/d7WXYtLN4fU" allowfullscreen></iframe></div><p class="vcap">北原照久氏が山崎大地氏との「宇宙旅行」「無重力ツアー」を語る<small>出典：YouTube「ZERO-BOYA」</small></p></div><div class="vitem"><div class="vid"><iframe loading="lazy" title="伊藤喜之　ＺＥＲＯ−Ｇの世界へ！！" src="https://www.youtube.com/embed/PM8EvWL-_wM" allowfullscreen></iframe></div><p class="vcap">伊藤喜之　ＺＥＲＯ−Ｇの世界へ！！<small>出典：YouTube「kightlinger Satoko」</small></p></div><div class="vitem"><div class="vid"><iframe loading="lazy" title="子守康範 - あなたに ありがとう（無重力編）" src="https://www.youtube.com/embed/AvQpqZzTHD4" allowfullscreen></iframe></div><p class="vcap">子守康範 - あなたに ありがとう（無重力編）<small>出典：YouTube「intelligentv3d」</small></p></div><div class="vitem"><div class="vid"><iframe loading="lazy" title="無重力ＴＶ　第一夜　からだがかわる" src="https://www.youtube.com/embed/lzCxZI-63ts" allowfullscreen></iframe></div><p class="vcap">無重力ＴＶ　第一夜　からだがかわる<small>出典：YouTube「128 tontsuku」</small></p></div></div></section>
+<section class="sec" id="media"><h2>メディア・CM・映画に登場した無重力</h2><p class="lead">無重力撮影・放物線飛行を扱った他社・他者の映像です。ASTRAXが制作したものではありません。</p><div class="videos"><div class="vitem"><div class="vid"><iframe loading="lazy" title="トム・クルーズ自ら提案・無重力空間からの飛行機墜落!!／映画『ザ・マミー／呪われた砂漠の王女』本編映像" src="https://www.youtube.com/embed/XQvSlVKS9iQ" allowfullscreen></iframe></div><p class="vcap">トム・クルーズ自ら提案・無重力空間からの飛行機墜落!!／映画『ザ・マミー／呪われた砂漠の王女』本編映像<small>出典：YouTube「moviecollectionjp」</small></p></div><div class="vitem"><div class="vid"><iframe loading="lazy" title="Kate Upton Zero Gravity Photoshoot 2014 | Sports Illustrated Swimsuit" src="https://www.youtube.com/embed/77-pNVbE0Uw" allowfullscreen></iframe></div><p class="vcap">Kate Upton Zero Gravity Photoshoot 2014 | Sports Illustrated Swimsuit<small>出典：YouTube「Sports Illustrated Swimsuit」</small></p></div><div class="vitem"><div class="vid"><iframe loading="lazy" title="2,000 Weightless Ping Pong Balls with Science Bob" src="https://www.youtube.com/embed/IMIPTtvAuUU" allowfullscreen></iframe></div><p class="vcap">2,000 Weightless Ping Pong Balls with Science Bob<small>出典：YouTube「ScienceBob」</small></p></div><div class="vitem"><div class="vid"><iframe loading="lazy" title="This Model Did a Zero Gravity Photo Shoot, and the Results Are Mesmerizing | SELF" src="https://www.youtube.com/embed/zwpRR6AxfaY" allowfullscreen></iframe></div><p class="vcap">This Model Did a Zero Gravity Photo Shoot, and the Results Are Mesmerizing | SELF<small>出典：YouTube「SELF」</small></p></div><div class="vitem"><div class="vid"><iframe loading="lazy" title="I got to be weightless for 7.5 minutes" src="https://www.youtube.com/embed/u9pkjHWAZLs" allowfullscreen></iframe></div><p class="vcap">I got to be weightless for 7.5 minutes<small>出典：YouTube「Simone Giertz」</small></p></div><div class="vitem"><div class="vid"><iframe loading="lazy" title="Zero-G Flight - Parabolic Flight with the Airbus A300 Of Novespace" src="https://www.youtube.com/embed/1ieR8hIXUIg" allowfullscreen></iframe></div><p class="vcap">Zero-G Flight - Parabolic Flight with the Airbus A300 Of Novespace<small>出典：YouTube「SPACE AFFAIRS」</small></p></div><div class="vitem"><div class="vid"><iframe loading="lazy" title="Zero Gravity Flight! (7 Things to Do If You Find Yourself in Zero Gravity)" src="https://www.youtube.com/embed/bukEuYFQaDU" allowfullscreen></iframe></div><p class="vcap">Zero Gravity Flight! (7 Things to Do If You Find Yourself in Zero Gravity)<small>出典：YouTube「outsidexbox」</small></p></div><div class="vitem"><div class="vid"><iframe loading="lazy" title="Taking an F1 Pit Stop to a whole new level! | Aston Martin Red Bull Racing&#x27;s Zero Gravity Pit Stop" src="https://www.youtube.com/embed/IVMICgfzICs" allowfullscreen></iframe></div><p class="vcap">Taking an F1 Pit Stop to a whole new level! | Aston Martin Red Bull Racing&#x27;s Zero Gravity Pit Stop<small>出典：YouTube「Oracle Red Bull Racing」</small></p></div><div class="vitem"><div class="vid"><iframe loading="lazy" title="Making It In Zero-G | The Story Behind Aston Martin Red Bull Racing&#x27;s Zero Gravity Pit Stop" src="https://www.youtube.com/embed/pQXGbep6S2c" allowfullscreen></iframe></div><p class="vcap">Making It In Zero-G | The Story Behind Aston Martin Red Bull Racing&#x27;s Zero Gravity Pit Stop<small>出典：YouTube「Oracle Red Bull Racing」</small></p></div><div class="vitem"><div class="vid"><iframe loading="lazy" title="無重力状態でBMXに乗りながらヒゲ剃りに挑戦！？" src="https://www.youtube.com/embed/mN43Hw4JrUQ" allowfullscreen></iframe></div><p class="vcap">無重力状態でBMXに乗りながらヒゲ剃りに挑戦！？<small>出典：YouTube「qwerty uiop」</small></p></div><div class="vitem"><div class="vid"><iframe loading="lazy" title="写真家 若井玲子さんの夢：無重力撮影の現場に密着｜Wix.com" src="https://www.youtube.com/embed/NOLdIGeyNPM" allowfullscreen></iframe></div><p class="vcap">写真家 若井玲子さんの夢：無重力撮影の現場に密着｜Wix.com<small>出典：YouTube「Wix Japan」</small></p></div><div class="vitem"><div class="vid"><iframe loading="lazy" title="Capture Your Dream Photo | Behind the Scenes | Wix.com" src="https://www.youtube.com/embed/OtgScc_ryL0" allowfullscreen></iframe></div><p class="vcap">Capture Your Dream Photo | Behind the Scenes | Wix.com<small>出典：YouTube「Wix」</small></p></div></div><p class="note2">これらの動画はYouTubeの公式埋め込みで表示しています。権利は各権利者に帰属し、配信元の都合で再生できなくなる場合があります。</p></section>
+</main>
+<footer><div class="wrap"><div class="fb">ASTRAX</div>
+<p>E-mail: <a href="mailto:astrax_zero.g@iss-japan.com">astrax_zero.g@iss-japan.com</a><br>Web: <a href="https://astrax.space">https://astrax.space</a><br>FB Page: <a href="https://www.facebook.com/ZERO.G.Challenger/">https://www.facebook.com/ZERO.G.Challenger/</a></p>
+<p class="cp">株式会社ASTRAX／有限会社国際宇宙サービス　© 2026 ASTRAX All rights reserved.</p></div></footer>
+<div id="lb"><button class="x">×</button><button class="p">‹</button><img alt=""><button class="n">›</button></div>
+<script>(function(){var im=[].slice.call(document.querySelectorAll('.grid img,figure.one img')),lb=document.getElementById('lb'),v=lb.querySelector('img'),i=0;function s(k){i=(k+im.length)%im.length;v.src=im[i].src;lb.classList.add('on')}im.forEach(function(e,k){e.addEventListener('click',function(){s(k)})});lb.querySelector('.x').onclick=function(){lb.classList.remove('on')};lb.querySelector('.p').onclick=function(){s(i-1)};lb.querySelector('.n').onclick=function(){s(i+1)};document.addEventListener('keydown',function(e){if(!lb.classList.contains('on'))return;if(e.key==='Escape')lb.classList.remove('on');if(e.key==='ArrowLeft')s(i-1);if(e.key==='ArrowRight')s(i+1)})})();</script>
+<script>(function(){var ss=document.getElementById('ss');if(!ss)return;var big=document.getElementById('ssBig'),th=[].slice.call(ss.querySelectorAll('.thumbs img')),i=0,tm;function go(k){i=(k+th.length)%th.length;big.src=th[i].src;th.forEach(function(e,j){e.classList.toggle('on',j===i)});var bx=th[i].parentNode;bx.scrollLeft=th[i].offsetLeft-bx.clientWidth/2+th[i].clientWidth/2}th.forEach(function(e,k){e.addEventListener('click',function(){go(k);rs()})});ss.querySelector('.sp').onclick=function(){go(i-1);rs()};ss.querySelector('.sn').onclick=function(){go(i+1);rs()};function rs(){clearInterval(tm);tm=setInterval(function(){go(i+1)},4500)}go(0);rs()})();</script>
+</body></html>
