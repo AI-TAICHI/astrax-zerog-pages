@@ -37,17 +37,17 @@
 <g transform="translate(602.0 108.2) rotate(2.5) translate(0 -9)" fill="#ffffff" opacity=".95"><path d="M-22 0C-22 -3 -18 -4 -12 -4L13 -4C18 -4 22 -2 24 0C22 2 18 3 13 3L-14 3C-19 3 -22 2 -22 0Z"/><path d="M-17 -3L-23 -14L-17 -14L-9 -4Z"/><path d="M-2 1L-13 10L-7 10L7 1Z"/><ellipse cx="-11" cy="-6" rx="5" ry="2.2"/><path d="M14 -3.2L19 -3.2L21 -1.2L14 -1.2Z" fill="#0b1f4b" opacity=".7"/></g>
 <g transform="translate(733.2 246.4) rotate(37.7) translate(0 -9)" fill="#ffffff" opacity=".95"><path d="M-22 0C-22 -3 -18 -4 -12 -4L13 -4C18 -4 22 -2 24 0C22 2 18 3 13 3L-14 3C-19 3 -22 2 -22 0Z"/><path d="M-17 -3L-23 -14L-17 -14L-9 -4Z"/><path d="M-2 1L-13 10L-7 10L7 1Z"/><ellipse cx="-11" cy="-6" rx="5" ry="2.2"/><path d="M14 -3.2L19 -3.2L21 -1.2L14 -1.2Z" fill="#0b1f4b" opacity=".7"/></g>
 <circle cx="142.8" cy="201.3" r="4" fill="#fff" stroke="#ff6a1a" stroke-width="2"/>
-<text x="142.8" y="187.3" fill="#fff" font-size="12" font-weight="600" text-anchor="middle">230KIAS</text>
+<text x="142.8" y="187.3" fill="#fff" font-size="12" font-weight="600" text-anchor="middle">約430km/h</text>
 <circle cx="405.2" cy="271.8" r="4" fill="#fff" stroke="#ff6a1a" stroke-width="2"/>
-<text x="405.2" y="293.8" fill="#fff" font-size="12" font-weight="600" text-anchor="middle">320KIAS</text>
+<text x="405.2" y="293.8" fill="#fff" font-size="12" font-weight="600" text-anchor="middle">約590km/h</text>
 <circle cx="536.4" cy="164.6" r="4" fill="#fff" stroke="#ff6a1a" stroke-width="2"/>
-<text x="466.4" y="156.6" fill="#fff" font-size="12" font-weight="600" text-anchor="middle">45°上昇 240KIAS</text>
+<text x="458.4" y="156.6" fill="#fff" font-size="12" font-weight="600" text-anchor="middle">45°上昇 約440km/h</text>
 <circle cx="602.0" cy="108.2" r="4" fill="#fff" stroke="#ff6a1a" stroke-width="2"/>
-<text x="602.0" y="76.2" fill="#fff" font-size="12" font-weight="600" text-anchor="middle">160KIAS</text>
+<text x="602.0" y="76.2" fill="#fff" font-size="12" font-weight="600" text-anchor="middle">約300km/h</text>
 <circle cx="667.6" cy="164.6" r="4" fill="#fff" stroke="#ff6a1a" stroke-width="2"/>
-<text x="741.6" y="158.6" fill="#fff" font-size="12" font-weight="600" text-anchor="middle">-35° 220KIAS</text>
+<text x="747.6" y="158.6" fill="#fff" font-size="12" font-weight="600" text-anchor="middle">-35° 約410km/h</text>
 <circle cx="798.8" cy="271.8" r="4" fill="#fff" stroke="#ff6a1a" stroke-width="2"/>
-<text x="798.8" y="293.8" fill="#fff" font-size="12" font-weight="600" text-anchor="middle">300KIAS</text>
+<text x="798.8" y="293.8" fill="#fff" font-size="12" font-weight="600" text-anchor="middle">約560km/h</text>
 <line x1="110" y1="370" x2="930" y2="370" stroke="#c9d6f2" stroke-opacity=".6"/>
 <line x1="142.8" y1="370" x2="142.8" y2="376" stroke="#c9d6f2" stroke-opacity=".6"/>
 <text x="142.8" y="392" fill="#c9d6f2" font-size="12" text-anchor="middle">-60</text>
@@ -72,4 +72,5 @@
 <text x="536.4" y="422" fill="#fff" font-size="13" font-weight="700" text-anchor="middle">NOW</text>
 <rect x="745.8" y="404" width="106" height="26" rx="13" fill="none" stroke="#c9d6f2"/>
 <text x="798.8" y="422" fill="#fff" font-size="13" font-weight="700" text-anchor="middle">実験準備開始</text>
+<text x="34" y="450" fill="#8093bd" font-size="10.5">速度は飛行機の計器に出る速さ（ノット）を km/h に直した目安です</text>
 </svg>
